@@ -1,0 +1,4 @@
+- se renseigner sur multiplexeur/démultiplexeur
+- se renseigner sur les rubans de leds adressables
+- se renseigner sur le pic24
+- une fois qu'on est renseignés, fair le fucking SF1D
