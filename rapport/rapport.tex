@@ -9,6 +9,15 @@
 \usepackage{xcolor}
 \usepackage{pdfpages}
 \usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Machine de Turing},
+	pdfpagemode=FullScreen,
+}
 
 \title{Machine de Turing}
 \author{ALLEGRE--COMMINGES Clément et BROUARD Romain}
@@ -109,7 +118,23 @@
 	\includegraphics[width=\textwidth]{img/SF2DFP3}
 	De la même manière que pour FP2, FP3 est en réalité un ensemble de fonctions plus spécifiques qui vont chacune avoir un rôle bien précis dans le retour des informations utilisateur. On a donc une grande variété de fonctions d'affichage qui vont, de la même manière que pour les sous-fonctions de FP2, être spécifiées ci-dessous.
 	\subsubsection{Spécifications des fonctions et de leurs signaux de communication}
-	\subsection{Conception Logiciel}
+	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).
+	\includepdf[pages=-]{docs/specs_fonctions_signaux}
+	\subsubsection{Choix des composants}
+	Nous pouvons désormais choisir nos composants. Nous avons donc choisis les références suivantes :
+	\begin{itemize}[label=$-$]
+		\item rubans de leds adressables $\times$ 2 : \url{https://www.superlightingled.com/sk9822similar-to-apa102-digital-intelligent-dream-color-rgb-72ledsm-dc5v-addressable-led-strip-lights-p-3256.html}
+		\item afficheurs 7 segments $\times$ 2 : \url{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}
+		\item leds adressables RGB $\times$ 2 : \url{https://www.gotronic.fr/art-led-rgb-5-mm-rgb5-dif-2099.htm} (à interfacer)
+		\item expendeurs IO - I²C $\times$ 2 : \url{https://www.mouser.fr/ProductDetail/Texas-Instruments/TCA6424ARGJR?qs=Ze4%2FuFuz19LzqLgNFpYqlQ%3D%3D}
+		\item écran LCD $\times$ 1 : TSB1G7000-E
+		\item boutons poussoirs $\times$ 2 : A voir avec Sébastien Beaufils
+		\item commutateurs $\times$ 2 : idem
+	\end{itemize}
+	\subsubsection{Schéma représentatif et schéma électrique}
+	\subsubsection{Tests}
+	\subsection{Conception Logicielle}
+	
 	\section{Annexes}
 	\subsection{Sources}
 \end{document}

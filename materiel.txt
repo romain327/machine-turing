@@ -1,0 +1,19 @@
+1 afficheur ldc i2c [MC21605C6W-BNMLWI-V2] https://fr.farnell.com/midas/mc21605c6w-bnmlwi-v2/afficheur-alphanumerique-16x2/dp/2748649
+
+2 afficheurs 7 seg à multiplexer [HDSP-7513] https://fr.farnell.com/broadcom-limited/hdsp-7513/afficheur-a-leds-7-62mm-he-rouge/dp/1003281
+
+2 leds rgb [L-59EYC] https://fr.farnell.com/kingbright/l-59eyc/led-5mm-tricolore/dp/1168662
+
+1 expendeur i2c [MCP23016] https://fr.farnell.com/microchip/mcp23016-i-sp/ic-io-expander-16bit-spdip28/dp/1439389
+
+1 ruban de leds spi [SK9822] https://www.superlightingled.com/sk9822similar-to-apa102-rgb-144ledsm-dc5v-12mmwide-digital-intelligent-addressable-led-strip-lights-1m328ft-per-roll-p-2458.html
+
+2 leds rouges [TLHK5100] https://fr.farnell.com/vishay/tlhk5100/led-5mm-red/dp/1328315
+
+2 switchs [2AS2T2A1M7RE] https://fr.farnell.com/multicomp/2as2t2a1m7re/switch-toggle-spdt-on-mom/dp/1550118 
+
+14 boutons NO [R13-24AL-05-BR] https://fr.farnell.com/multicomp/r13-24al-05-br/switch-spst-3a-125v-tht/dp/1634695
+
+2 transistors canal N [BS170] https://fr.farnell.com/on-semiconductor/bs170/transistor-mosfet-n-to-92/dp/1017687
+
+7 résistances 845Ω [MRS25000C8450FCT00] https://fr.farnell.com/vishay/mrs25000c8450fct00/resist-couche-mince-845r-1-600mw/dp/9470328
