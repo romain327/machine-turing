@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=turing.X
+PROJECTNAME=machine_de_turing
 
 # Active Configuration
 DEFAULTCONF=default
