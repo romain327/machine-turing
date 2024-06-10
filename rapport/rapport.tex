@@ -28,25 +28,28 @@
 	\section{Introduction}
 	\subsection{Un peu d'histoire...}
 	En 1928, Le mathématicien allemand David Hilbert énonce le "problème de la décision". Il se demande s'il est possible de trouver une méthode « effectivement calculable » pour décider si une proposition est démontrable. Pour résoudre ce problème, il faut caractériser ce qu'est un procédé effectivement calculable. C'est alors qu'Alan Turing, alors en thèse à Cambridge, conceptualise une machine universelle et prouve grâce à cette dernière que le problème de l'arrêt est indécidable, ce qui permet de donner une réponse négative au problème d'Hilbert pour l'arithmétique. C'est alors qu'Alan Turing introduit les concepts de programme et programmation.\\
-	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont l'on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendand la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
+	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendand la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
 	
 	\subsection{Fonctionnement d'une MTU}
-	Une MTU se compose de deux éléments essentiels :
+	Une MTU se compose de quatre éléments essentiels :
 	\begin{itemize}[label=$-$]
-				\item un ruban de taille infinie, divisé en cases.\\
-		\item une tête de lecture/écriture (qu'on appellera simplement tête de lecture, même si elle permet également d'écrire sur le ruban)
+		\item un ruban de taille infinie, divisé en cases.\\
+		\item une tête de lecture/écriture (qu'on appellera simplement tête de lecture, même si elle permet également d'écrire sur le ruban)\\
+		\item un état interne
+		\item une table de transition.
 	\end{itemize}
-	Le ruban permet d'accueillir des symboles qui seront lus et écrits par la tête de lecture. Le ruban peut se déplacer vers la gauche ou la droite. L'ensemble des symboles traités est appelé un alphabet.\\
-	La tête de lecture permet de lire et écrire un symbole. Elle possède également un état.\\
+	Une machine de Turing traite des symboles. L'ensemble des symboles est appelé Alphabet.\\
+	Le ruban permet d'accueillir des symboles qui seront lus et écrits par la tête de lecture.\\
+	La tête de lecture permet de lire et écrire un symbole. Elle peut se déplacer vers la gauche ou la droite.\\
 	\\
-	Une machine de Turing marche donc de la manière suivante :\\
+	Une machine de Turing fonctionne donc de la manière suivante :\\
 	\begin{enumerate}
 		\item La tête de lecture lit le symbole qu'elle pointe sur le ruban.\\
-		\\ En fonction de son état et du symbole lu, la tête de lecture écrit un symbole à la place de celui qu'elle a lu précédemment.\\
+		\item En fonction de son état et du symbole lu, la tête de lecture écrit un symbole à la place de celui qu'elle a lu précédemment.\\
 		\item Un déplacement est  choisi en fonction de l'état de la tête de lecture et du symbole lu.\\
 		\item La tête de lecture change d'état.\\
-		Le ruban se déplace vers la droite ou vers la gauche selon le déplacement choisi précédemment.\\
-		\item Puis on recommence depuis le 1.
+		\item Le ruban se déplace vers la droite ou vers la gauche selon le déplacement choisi précédemment.\\
+		\item Puis on recommence depuis le 1.\\
 	\end{enumerate}
 	 On peut donc résumer le fonctionnement comme cela : à chaque "cycle", on choisi un symbole à écrire, un nouvel état pour la tête de lecture, et un déplacement, en fonction d'un symbole lu et de l'état actuel. On peut donc définir une fonction de transition, qui va se charger de déterminer l'état futur d'une MTU en fonction de ton état courant. L'ensemble des fonctions de transition permettant de traiter un "mot" peut être représenté sous la forme d'une table de transitions ou d'un graphe de transitions.\\
 	 Un mot traité est dit accepté si une Machine de Turing s'arrête en état final après l'avoir intégralement traité.\\

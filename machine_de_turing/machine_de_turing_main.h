@@ -8,7 +8,9 @@
 
 #ifndef	__MACHINE_DE_TURING_MAIN_H__
 #define	__MACHINE_DE_TURING_MAIN_H__
+
 #include <xc.h>
+#include "lib_machine_de_turing.h"
 
 
 #endif //__MACHINE_DE_TURING_MAIN_H__

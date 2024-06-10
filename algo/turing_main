@@ -1,6 +1,0 @@
-PROCEDURE main():
-	initialiser()
-	TANT QUE 1:
-		mainTask()
-	FIN TANT QUE
-FIN
