@@ -1,0 +1,128 @@
+Slide 1: Titre
+Titre: Machine de Turing
+Sous-titre: Par Clément Allegre-Commings et Romain Brouard
+Image: Logo de l'université ou une image pertinente de Turing ou de sa machine
+Slide 2: Introduction
+Titre: Introduction
+Contenu:
+Présentation brève des auteurs
+Objectif de la présentation: présenter la conception et le fonctionnement d'une machine de Turing
+Slide 3: Un peu d'Histoire
+Titre: Un peu d'Histoire
+Contenu:
+David Hilbert et le "problème de la décision" en 1928
+Alan Turing et la conceptualisation de la machine universelle
+La première machine de Turing à Bletchley Park
+Image: Photo d'Alan Turing et/ou Bletchley Park
+Slide 4: Fonctionnement d'une MTU
+Titre: Fonctionnement d'une Machine de Turing Universelle (MTU)
+Contenu:
+Éléments essentiels: ruban, tête de lecture/écriture, état interne, table de transition
+Description de l'alphabet et des symboles
+Image: Schéma d'une MTU
+Slide 5: Cycle de Fonctionnement
+Titre: Cycle de Fonctionnement
+Contenu:
+Étapes du cycle de fonctionnement d'une MTU
+Fonction de transition et son formalisme
+Image: Graphique montrant les étapes du cycle de fonctionnement
+Slide 6: Exemple de Table de Transition
+Titre: Exemple de Table de Transition
+Contenu:
+Exemple d'une table de transition pour une MTU
+Image: Table de transition pour le langage 
+𝐿
+=
+{
+𝑎
+𝑘
+𝑏
+𝑘
+ 
+∣
+ 
+𝑘
+>
+0
+}
+L={a 
+k
+ b 
+k
+ ∣k>0}
+Slide 7: Objectif du Projet
+Titre: Objectif du Projet
+Contenu:
+Concevoir une machine de Turing selon la définition donnée
+Présentation des différentes parties du projet
+Image: Diagramme simple du projet
+Slide 8: Cahier des Charges - Partie 1
+Titre: Cahier des Charges - Partie 1
+Contenu:
+Exécution d'un programme prédéfini
+Modes pas à pas et continu
+Gestion de l'affichage de l'état du ruban, de la tête de lecture, et de la table de transition
+Image: Liste à puces des points mentionnés
+Slide 9: Cahier des Charges - Partie 2 et 3
+Titre: Cahier des Charges - Partie 2 et 3
+Contenu:
+Sélection de programme via un menu
+Stockage des programmes et initialisation manuelle du ruban
+Programmation directe de la table de transition sur la machine
+Image: Liste à puces des points mentionnés
+Slide 10: Diagramme Bête à Corne
+Titre: Diagramme Bête à Corne
+Contenu:
+Définition des besoins avec le diagramme bête à corne
+Image: Diagramme bête à corne
+Slide 11: Matrice Moscow
+Titre: Matrice Moscow
+Contenu:
+Présentation de la matrice Moscow pour la priorisation des fonctionnalités
+Image: Matrice Moscow
+Slide 12: Conception Matérielle
+Titre: Conception Matérielle
+Contenu:
+Présentation du Schéma fonctionnel de premier niveau (SFN1)
+Image: Schéma SFN1
+Slide 13: Schéma Fonctionnel Détaillé
+Titre: Schéma Fonctionnel Détaillé
+Contenu:
+Présentation des schémas SF1D, FP2 et FP3
+Image: Schéma SF1D et les détails de FP2 et FP3
+Slide 14: Spécifications des Fonctions et Signaux
+Titre: Spécifications des Fonctions et Signaux
+Contenu:
+Rôles des différentes fonctions et leurs signaux
+Image: Extrait des spécifications
+Slide 15: Choix des Composants
+Titre: Choix des Composants
+Contenu:
+Présentation des composants sélectionnés initialement et finalement
+Image: Liste des composants avec liens et images des composants principaux
+Slide 16: Schéma Représentatif et Électrique
+Titre: Schéma Représentatif et Électrique
+Contenu:
+Présentation des schémas représentatifs et électriques
+Image: Schéma électrique
+Slide 17: Tests
+Titre: Tests
+Contenu:
+Description des tests réalisés pour valider le système
+Image: Photos et résultats des tests
+Slide 18: Conception Logicielle
+Titre: Conception Logicielle
+Contenu:
+Diagrammes de séquences pour l'initialisation et le déroulement du programme
+Image: Diagrammes de séquence
+Slide 19: Algorithme
+Titre: Algorithme
+Contenu:
+Présentation de l'algorithme utilisé pour la MTU
+Image: Extrait de l'algorithme
+Slide 20: Conclusion et Perspectives
+Titre: Conclusion et Perspectives
+Contenu:
+Résumé du travail réalisé
+Perspectives pour les futures améliorations
+Image: Diagramme ou graphique final
