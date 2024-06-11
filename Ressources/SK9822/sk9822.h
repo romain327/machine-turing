@@ -21,7 +21,7 @@
 
 //defines
 #define NULL_POINTER 0	//!< define the NULL pointer for your target device
-#define N_LED 26		//!< define the number of LEDs on the strip
+#define N_LED 30		//!< define the number of LEDs on the strip
 
 typedef void (*fptr_U8_t)(uint8_t);  //!< function pointer with uint8_t parameter
 

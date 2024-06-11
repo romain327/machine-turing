@@ -13,7 +13,7 @@
 
 // Default I2C address (for 8 pins devices)
 #define MCP23017_7_SEG   0b0100001
-#define MCP23017_BUTTONS 0b0100010
+#define MCP23017_BP      0b0100010
 #define MCP23017_GENERAL 0b0100011
 
 // internal regs
@@ -101,5 +101,3 @@ typedef struct  {
  mcp23017_err_t mcp23017_read_reg(const mcp23017_desc_t *pMPC23017,uint8_t RegAddr, uint8_t *pRegValue);
  
 #endif //__LIB_MPC23017_H__
-
-

@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
@@ -10,6 +10,8 @@
 \usepackage{pdfpages}
 \usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=blue,
@@ -19,18 +21,53 @@
 	pdfpagemode=FullScreen,
 }
 
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\Sharp}{{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\titleformat{\chapter}[block]
+{\normalfont\huge\bfseries}{}{0pt}{}
+
 \title{Machine de Turing}
 \author{ALLEGRE--COMMINGES Clément et BROUARD Romain}
 \date{~}
 \begin{document}
 	\maketitle
 	\tableofcontents
-	\section{Introduction}
-	\subsection{Un peu d'histoire...}
+	\chapter{Introduction}
+	\section{Un peu d'histoire...}
 	En 1928, Le mathématicien allemand David Hilbert énonce le "problème de la décision". Il se demande s'il est possible de trouver une méthode « effectivement calculable » pour décider si une proposition est démontrable. Pour résoudre ce problème, il faut caractériser ce qu'est un procédé effectivement calculable. C'est alors qu'Alan Turing, alors en thèse à Cambridge, conceptualise une machine universelle et prouve grâce à cette dernière que le problème de l'arrêt est indécidable, ce qui permet de donner une réponse négative au problème d'Hilbert pour l'arithmétique. C'est alors qu'Alan Turing introduit les concepts de programme et programmation.\\
 	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendant la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
 	
-	\subsection{Fonctionnement d'une MTU}
+	\section{Fonctionnement d'une MTU}
 	Une MTU se compose de quatre éléments essentiels :
 	\begin{itemize}[label=$-$]
 		\item un ruban de taille infinie, divisé en cases.
@@ -75,10 +112,10 @@
 	 \\
 	 \\
 	 Le but de ce projet va donc être de concevoir une Machine de Turing telle que définie ci-dessus.
-	 \section{Conception}
-	 \subsection{Cahier des charges}
+	 \chapter{Conception}
+	 \section{Cahier des charges}
 	 Le cahier des charges est composé de trois parties. La partie 1 doit être traitée absolument, les parties 2 et 3 seront traitées si le temps nous le permet.
-	 \subsubsection{Partie 1}
+	 \subsection{Partie 1}
 	 Dans un premier temps, le système conçu doit être capable de :
 	 \begin{itemize}[label=$-$]
 	 	\item exécuter un programme prédéfini (codé en dur dans le programme microcontrôleur).
@@ -88,14 +125,14 @@
 	 	\item gérer l'affichage de la position de la tête de lecture.
 	 	\item gérer l'affichage de la table de transition.
 	 \end{itemize}
-	 \subsubsection{Partie 2}
+	 \subsection{Partie 2}
 	 Dans un second temps, il faut rajouter :
 	 \begin{itemize}[label=$-$]
 	 	\item  la possibilité de sélectionner un programme via un menu.
 	 	\item le stockage des programmes à sélectionner.
 	 	\item l'initialisation manuelle du ruban et de la position de la tête de lecture.
 	 \end{itemize}
-	 \subsubsection{Partie 3}
+	 \subsection{Partie 3}
 	 Enfin pour obtenir un système complet, il faut implémenter :
 	 \begin{itemize}[label=$-$]
 	 	\item la programmation directement sur la machine d'une table de transition.
@@ -103,33 +140,33 @@
 	 	\item un reset de la programmation de la ligne en cours.
 	 	\item l'affichage d'une description du programme.
 	 \end{itemize}
- 	\subsection{Définition des besoins}
- 	 \subsubsection{Diagramme bête à corne}
- 	 \subsubsection{Matrice Moscow}
-	 \subsection{Conception Matérielle}
+ 	\section{Définition des besoins}
+ 	 \subsection{Diagramme bête à corne}
+ 	 \subsection{Matrice Moscow}
+	 \section{Conception Matérielle}
 	 Pour concevoir notre système, nous avons décidé de traiter les trois parties en même temps, ce qui nous évite de devoir repasser par une phase de conception et d'adaptation lors de la réalisation des parties 2 et 3.\\
-	 \subsubsection{SFN1}
+	 \subsection{SFN1}
 	 Nous avons donc commencé par dessiner un Schéma fonctionnel de premier niveau, pour définir les différentes entrées et sorties de notre système :\\
 	 \includegraphics[width=\textwidth]{img/SFN1}
-	\subsubsection{SFnD}
+	\subsection{SFnD}
 	On peut désormais rentrer un peu plus dans le détail avec un SF1D :\\
 	\includegraphics[width=\textwidth]{img/SF1D}
 	On voit qu'on a quatre fonctions principales : une qui s'occupe de la gestion des entrées (FP2), une qui gère les sorties (FP3), une fonction de stockage pour stocker les tables de transitions (FP4), et du traitement numérique qui va piloter tout ça (FP1).\\
 	On a aussi deux fonctions annexes : la fonction alimentation qui va se charger de fournir le courant nécessaire pour que la machine puisse fonctionner, et la fonction de programmation in-situ qui va faciliter le chargement du code dans la machine et nous éviter d'avoir à sortir le micro-contrôleur (MCU) à chaque fois.\\
 	\\
 	On voit que les fonctions FP2 et FP3 sont encore floues, on va donc les affiner en faisant des SF2D pour qu'on se rende compte de leur fonctionnement :\\
-	\paragraph{FP2 :}
+	\subsubsection{FP2 :}
 	\includegraphics[width=\textwidth]{img/SF2DFP2}
 	On voit clairement que FP2 est bien plus complexe qu'elle ne le parait, et forme un ensemble de fonctions plus spécifiques qui vont permettre à l'utilisateur d'interagir physiquement avec la machine, dans le but de la configurer, programmer, etc.
-	\paragraph{FP3 :}
+	\subsubsection{FP3 :}
 	\includegraphics[width=\textwidth]{img/SF2DFP3}
 	De la même manière que pour FP2, FP3 est en réalité un ensemble de fonctions plus spécifiques qui vont chacune avoir un rôle bien précis dans le retour des informations utilisateur. On a donc une grande variété de fonctions d'affichage qui vont, de la même manière que pour les sous-fonctions de FP2, être spécifiées ci-dessous.
-	\subsubsection{Spécifications des fonctions et de leurs signaux de communication}
+	\subsection{Spécifications des fonctions et de leurs signaux de communication}
 	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).
 	\includepdf[pages=-]{docs/specs_fonctions_signaux}
-	\subsubsection{Choix des composants}
+	\subsection{Choix des composants}
 	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
-	\paragraph{Commande initiale Farnell}
+	\subsubsection{Commande initiale Farnell}
 	\begin{itemize}[label=$-$]
 		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}\\
 		\item afficheurs 7 segments \href{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}{HDSM-283B}\\
@@ -146,16 +183,160 @@
 		\item écran LCD I2C \href{https://fr.rs-online.com/web/p/afficheurs-monochromes-lcd/2644045?searchId=b08a66da-698d-420f-a525-b4944d7ccd96&gb=s}{NHD-C0220BiZ-FSW-FBW-3V3M}\\
 		\item LEDs RGB \href{https://fr.rs-online.com/web/p/leds/1651767?gb=s}{L-154A4SURKQBDZGW}\\
 	\end{itemize}
-	\subsubsection{Schéma représentatif et schéma électrique}
-	\subsubsection{Tests}
+	\subsection{Schéma représentatif et schéma électrique}
+	\subsection{Tests}
 	\subsection{Conception Logicielle}
 	Cette section ne traitera que la partie 1 du cahier des charges, les parties 2 et 3 ne pouvant être réalisées par manque de temps.\\
-	\subsubsection{Diagramme de Séquences}
+	\subsection{Diagramme de Séquences}
 	Les deux diagrammes de séquence ci-dessous montrent respectivement la phase d'initialisation et la phase de déroulement du programme au niveau du micro-contrôleur (on ne prend pas en compte les actions de l'utilisateur).\\
 	Ce sont des diagrammes "best-case", c'est à dire qu'on ne prend pas en compte les erreurs qui pourraient survenir, et on déroule le fonctionnement du programme en supposant que tout se passe bien. Cela permet principalement de ne pas faire trop de diagrammes, ni de diagrammes trop longs.\\
 	\includegraphics[width=\textwidth]{img/initSeq}
 	\includegraphics[width=\textwidth]{img/mainTaskSeq}
-	\subsubsection{Algorithme}
-	\section{Annexes}
-	\subsection{Sources}
+	\subsection{Algorithme}
+	\begin{lstlisting}
+		LIB_MACHINE_DE_TURING
+		VARIABLES
+		mcp23017_desc_t mpc23017_7_seg
+		mcp23017_desc_t mcp23017_bp
+		mcp23017_desc_t mcp23017_general
+		i2c_desc_t I2CModule
+		
+		ENUMERATIONS
+		mcp23017_err_t
+		MCP23017_OK
+		MCP23017_ERROR
+		
+		mcp23017_i2c_init_type_t
+		INIT_WITH_I2C1
+		INIT_WITH_I2C2
+		INIT_ALREADY_DONE
+		
+		working_mode_t
+		MANUAL_MODE
+		AUTOMATIC_MODE
+		
+		STRUCTURES
+		mcp23017_desc_t
+		i2c_desc_t  *pi2c
+		uint8_t     i2c_Address
+		
+		mcp23017_config_t
+		i2c_desc_t  *pi2c;                      
+		mcp23017_i2c_init_type_t    initType;   
+		uint8_t i2c_Address;
+		
+		
+		machine_de_turing_desc_t
+		uint8_t state
+		uint8_t symbol
+		uint8_t next_state
+		uint8_t next_symbol
+		uint8_t next_move
+		
+		CONSTANTES
+		MCP23017_7_SEG_ADDRESS      0100001
+		MCP23017_BP_ADDRESS         0100010
+		MCP23017_GENERAL_ADDRESS    0100011
+		
+		MCP23017_IOCONA_ADDRESS     0x0A
+		MCP23017_IOA_ADDRESS        0x12
+		MCP23017_IOB_ADDRESS        0x13
+		
+		DEBUT
+		PROCEDURE Initialiser()
+		VARIABLES
+		mcp23017_err_t   Res;
+		mcp23017_config_t    mcpCfg;
+		DEBUT
+		Configuration du port B en sortie
+		
+		// MPC23017 7 segs
+		mcpCfg.pi2c = &I2CModule;
+		Initialisation avec I2C_1
+		Adresse = MCP23017_7_SEG_ADRESS;
+		
+		Res = mcp23017_init(@mpc23017_7_seg, @mcpCfg)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		// MPC23017 BP
+		mcpCfg.pi2c = &I2CModule;
+		Initialisation avec I2C_1
+		Adresse = MCP23017_BP_ADDRESS;
+		
+		Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		// MPC23017 GENERAL
+		mcpCfg.pi2c = &I2CModule;
+		Initialisation avec I2C_1
+		Adresse = MCP23017_GENERAL_ADDRESS;
+		
+		Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		FIN Initialiser()
+		
+		PROCEDURE MainTask()
+		VARIABLES
+		uint8_t working_mode
+		uint8_t next_step
+		led_color_t rw_pointer_color
+		DEBUT
+		Res = mcp23017_read_reg(@mcp23017_bp, MCP23017_IOA_ADDRESS, @working_mode)
+		SI Res != MCP23017_OK ALORS
+		working_mode = MANUAL_MODE
+		FIN SI
+		
+		TANT QUE mtu->state != ACCEPT_STATE FAIRE
+		get_next_state(mtu->state, mtu->symbol, mtu->next_state)
+		get_next_symbol(mtu->state, mtu->symbol, mtu->next_symbol)
+		get_next_move(mtu->state, mtu->symbol, mtu->next_move)
+		set_next_move(mtu->position, mtu->next_move)
+		
+		sk9822_set_LED_rgb(sk9822_1, mtu->position, mtu->symbol)
+		sk9822_set_LED_rgb(sk9822_1, mtu->position, rw_pointer_color)
+		
+		RegValue = int_to_bin(mtu->state)
+		Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOA_ADDRESS, RegValue)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		RegValue = int_to_bin(mtu->next_state)
+		Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOB_ADDRESS, RegValue)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		RegValue = generate_general_reg(mtu->symbol, mtu->next_symbol, mtu->next_move)
+		Res = mcp23017_write_reg(@mcp23017_general, MCP23017_IOA_ADDRESS, RegValue)
+		SI Res != MCP23017_OK ALORS
+		error_handler()
+		FIN SI
+		
+		mtu->state = mtu->next_state
+		mtu->symbol = mtu->next_symbol
+		
+		SI working_mode = MANUAL_MODE ALORS
+		TANT QUE next_step = 0 FAIRE
+		FIN TANT QUE
+		SINON
+		attendre(2000)
+		FIN SI
+		FIN MainTask()
+		
+		PROCEDURE error_handler()
+		allumer_led()
+		TANT QUE 1 FAIRE
+		FIN TANT QUE
+		FIN error_handler
+	\end{lstlisting}
+	\chapter{Annexes}
+	\section{Sources}
 \end{document}

@@ -13,7 +13,9 @@
 #define FCY 400000UL
 #endif
 
-mcp23017_desc_t mpc23017_7_seg;
+mcp23017_desc_t mcp23017_7_seg;
+mcp23017_desc_t mcp23017_bp;
+mcp23017_desc_t mcp23017_general;
 i2c_desc_t I2CModule;
 
 void Initialiser() {
@@ -22,32 +24,43 @@ void Initialiser() {
     
     TRISB = 0x0000;
     LATB = 0;
-    
-    // MPC23017 7 segs
+  
     mcpCfg.pi2c = &I2CModule;
     mcpCfg.initType = INIT_WITH_I2C1;
-    mcpCfg.i2c_Address = MCP23017_7_SEG;
     
-    Res = mcp23017_init(&mpc23017_7_seg,&mcpCfg);
+    // MCP23017 7 segs
+    mcpCfg.i2c_Address = MCP23017_7_SEG;
+    Res = mcp23017_init(&mcp23017_7_seg,&mcpCfg);
     if (Res != MCP23017_OK) error_handler();
     
-
+    // MCP23017 BP
+    mcpCfg.i2c_Address = MCP23017_BP;
+    Res = mcp23017_init(&mcp23017_bp,&mcpCfg);
+    if (Res != MCP23017_OK) error_handler();
+    
+    // MCP23017 GENERAL
+    mcpCfg.i2c_Address = MCP23017_GENERAL;
+    Res = mcp23017_init(&mcp23017_general,&mcpCfg);
+    if (Res != MCP23017_OK) error_handler();
+    
+    
+    
 }
 
 void MainTask() {
     uint8_t RegAddr = 0x09;
     uint8_t RegValue = 0b10100000;
     uint8_t RegValue2;
-    if(mcp23017_write_reg(&mpc23017_7_seg, 0x0A, RegValue) == MCP23017_ERROR) {
+    if(mcp23017_write_reg(&mcp23017_7_seg, 0x0A, RegValue) == MCP23017_ERROR) {
         error_handler();
     }
     RegValue = 0b00000001;
 
-    if(mcp23017_write_reg(&mpc23017_7_seg, RegAddr, 0b00000001) == MCP23017_ERROR) {
+    if(mcp23017_write_reg(&mcp23017_7_seg, RegAddr, 0b00000001) == MCP23017_ERROR) {
         error_handler();
         while(1);
     }
-    if(mcp230173_read_reg(&mpc23017_7_seg, RegAddr, &RegValue2) == MCP23017_ERROR) {
+    if(mcp230173_read_reg(&mcp23017_7_seg, RegAddr, &RegValue2) == MCP23017_ERROR) {
         error_handler();
     }
     LATBbits.LATB15 = 0;
