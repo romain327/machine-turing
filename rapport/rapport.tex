@@ -28,7 +28,7 @@
 	\section{Introduction}
 	\subsection{Un peu d'histoire...}
 	En 1928, Le mathématicien allemand David Hilbert énonce le "problème de la décision". Il se demande s'il est possible de trouver une méthode « effectivement calculable » pour décider si une proposition est démontrable. Pour résoudre ce problème, il faut caractériser ce qu'est un procédé effectivement calculable. C'est alors qu'Alan Turing, alors en thèse à Cambridge, conceptualise une machine universelle et prouve grâce à cette dernière que le problème de l'arrêt est indécidable, ce qui permet de donner une réponse négative au problème d'Hilbert pour l'arithmétique. C'est alors qu'Alan Turing introduit les concepts de programme et programmation.\\
-	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendand la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
+	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendant la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
 	
 	\subsection{Fonctionnement d'une MTU}
 	Une MTU se compose de quatre éléments essentiels :
@@ -102,6 +102,9 @@
 	 	\item un reset de la programmation de la ligne en cours.\\
 	 	\item l'affichage d'une description du programme.
 	 	\end{itemize}
+ 	\subsection{Définition des besoins}
+ 	 \subsubsection{Diagramme bête à corne}
+ 	 \subsubsection{Matrice Moscow}
 	 \subsection{Conception Matérielle}
 	 Pour concevoir notre système, nous avons décidé de traiter les trois parties en même temps, ce qui nous évite de devoir repasser par une phase de conception et d'adaptation lors de la réalisation des parties 2 et 3.\\
 	 \subsubsection{SFN1}
@@ -124,20 +127,34 @@
 	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).
 	\includepdf[pages=-]{docs/specs_fonctions_signaux}
 	\subsubsection{Choix des composants}
-	Nous pouvons désormais choisir nos composants. Nous avons donc choisis les références suivantes :
+	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
+	\paragraph{Commande initiale Farnell}
 	\begin{itemize}[label=$-$]
-		\item rubans de leds adressables $\times$ 2 : \url{https://www.superlightingled.com/sk9822similar-to-apa102-digital-intelligent-dream-color-rgb-72ledsm-dc5v-addressable-led-strip-lights-p-3256.html}
-		\item afficheurs 7 segments $\times$ 2 : \url{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}
-		\item leds adressables RGB $\times$ 2 : \url{https://www.gotronic.fr/art-led-rgb-5-mm-rgb5-dif-2099.htm} (à interfacer)
-		\item expendeurs IO - I²C $\times$ 2 : \url{https://www.mouser.fr/ProductDetail/Texas-Instruments/TCA6424ARGJR?qs=Ze4%2FuFuz19LzqLgNFpYqlQ%3D%3D}
-		\item écran LCD $\times$ 1 : TSB1G7000-E
-		\item boutons poussoirs $\times$ 2 : A voir avec Sébastien Beaufils
-		\item commutateurs $\times$ 2 : idem
+		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}\\
+		\item afficheurs 7 segments \href{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}{HDSM-283B}\\
+		\item LEDs RGB \href{https://fr.farnell.com/kingbright/l-59eyc/led-5mm-tricolore/dp/1168662}{L-59EYC}\\
+		\item expandeurs IO - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}\\
+		\item écran LCD I2C \href{https://fr.farnell.com/midas/mc21605c6w-bnmlwi-v2/afficheur-alphanumerique-16x2/dp/2748649}{MC21605C6W-BNMLWI-V2}\\
+		\item boutons poussoirs \href{https://fr.farnell.com/panasonic/ese20c321/commutateur-bouton-pouss-momentane/dp/2079613}{ESE20C321}\\
+		\item commutateurs \href{https://fr.farnell.com/multicomp/2as2t2a1m7re/switch-toggle-spdt-on-mom/dp/1550118}{2AS2T2A1M7RE}\\
+	\end{itemize}
+	\paragraph{Commande réelle (RS et Amazon)}
+	\begin{itemize}[label=$-$]
+		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}\\
+		\item expandeurs IO - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}\\
+		\item écran LCD I2C \href{https://fr.rs-online.com/web/p/afficheurs-monochromes-lcd/2644045?searchId=b08a66da-698d-420f-a525-b4944d7ccd96&gb=s}{NHD-C0220BiZ-FSW-FBW-3V3M}\\
+		\item LEDs RGB \href{https://fr.rs-online.com/web/p/leds/1651767?gb=s}{L-154A4SURKQBDZGW}\\
 	\end{itemize}
 	\subsubsection{Schéma représentatif et schéma électrique}
 	\subsubsection{Tests}
 	\subsection{Conception Logicielle}
-	
+	Cette section ne traitera que la partie 1 du cahier des charges, les parties 2 et 3 ne pouvant être réalisées par manque de temps.\\
+	\subsubsection{Diagramme de Séquences}
+	Les deux diagrammes de séquence ci-dessous montrent respectivement la phase d'initialisation et la phase de déroulement du programme au niveau du micro-contrôleur (on ne prend pas en compte les actions de l'utilisateur).\\
+	Ce sont des diagrammes "best-case", c'est à dire qu'on ne prend pas en compte les erreurs qui pourraient survenir, et on déroule le fonctionnement du programme en supposant que tout se passe bien. Cela permet principalement de ne pas faire trop de diagrammes, ni de diagrammes trop longs.\\
+	\includegraphics[width=\textwidth]{img/initSeq}
+	\includegraphics[width=\textwidth]{img/mainTaskSeq}
+	\subsubsection{Algorithme}
 	\section{Annexes}
 	\subsection{Sources}
 \end{document}

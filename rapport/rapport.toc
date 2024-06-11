@@ -14,8 +14,12 @@
 \contentsline {paragraph}{FP3 :}{8}{section*.3}%
 \contentsline {subsubsection}{\numberline {2.2.3}Spécifications des fonctions et de leurs signaux de communication}{9}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Choix des composants}{20}{subsubsection.2.2.4}%
+\contentsline {paragraph}{Commande initiale Farnell}{20}{section*.4}%
+\contentsline {paragraph}{Commande réelle (RS et Amazon)}{20}{section*.5}%
 \contentsline {subsubsection}{\numberline {2.2.5}Schéma représentatif et schéma électrique}{20}{subsubsection.2.2.5}%
 \contentsline {subsubsection}{\numberline {2.2.6}Tests}{20}{subsubsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.3}Conception Logicielle}{20}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Annexes}{20}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Sources}{20}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Diagramme de Séquences}{20}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Algorithme}{22}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Annexes}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Sources}{22}{subsection.3.1}%

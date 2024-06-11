@@ -15,6 +15,10 @@
 #include "lib_i2c_pic24_ll.h"
 #include "lib_mcp23017.h"
 
+typedef struct {
+    uint8_t etat;
+} machine_de_turing_desc;
+
 void Initialiser();
 void MainTask();
 void error_handler();

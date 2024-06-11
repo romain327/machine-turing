@@ -1,0 +1,60 @@
+LIB_MACHINE_DE_TURING
+VARIABLES
+    mcp23017_desc_t mpc23017_7_seg;
+    i2c_desc_t I2CModule;
+DEBUT
+
+PROCEDURE Initialiser()
+VARIABLES
+    mcp23017_err_t   Res;
+    mcp23017_config_t    mcpCfg;
+DEBUT
+    Configuration du port B en sortie
+    
+    // MPC23017 7 segs
+    mcpCfg.pi2c = &I2CModule;
+    Initialisation avec I2C_1
+    Adresse = 0x41;
+    
+    Res = mcp23017_init(@mpc23017_7_seg, @mcpCfg);
+    SI Res != MCP23017_OK
+        error_handler();
+    FIN SI
+
+}
+
+void MainTask() {
+    uint8_t RegAddr = 0x09;
+    uint8_t RegValue = 0b10100000;
+    uint8_t RegValue2;
+    if(mcp23017_write_reg(&mpc23017_7_seg, 0x0A, RegValue) == MCP23017_ERROR) {
+        error_handler();
+    }
+    RegValue = 0b00000001;
+
+    if(mcp23017_write_reg(&mpc23017_7_seg, RegAddr, 0b00000001) == MCP23017_ERROR) {
+        error_handler();
+        while(1);
+    }
+    if(mcp230173_read_reg(&mpc23017_7_seg, RegAddr, &RegValue2) == MCP23017_ERROR) {
+        error_handler();
+    }
+    LATBbits.LATB15 = 0;
+    if(RegValue2 == 0b00000001) {
+        valid();
+        while(1);
+    }
+    else {
+        error_handler();
+        while(1);
+    }
+}
+
+void error_handler(void){
+    LATBbits.LATB15 = 1;
+    __delay_ms(500);
+}
+
+void valid(void) {
+    LATBbits.LATB14 = 1;
+}

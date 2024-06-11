@@ -9,6 +9,10 @@
 #include "lib_machine_de_turing.h"
 #include "lib_sept_seg.h"
 
+#ifndef FCY
+#define FCY 400000UL
+#endif
+
 mcp23017_desc_t mpc23017_7_seg;
 i2c_desc_t I2CModule;
 
@@ -59,6 +63,7 @@ void MainTask() {
 
 void error_handler(void){
     LATBbits.LATB15 = 1;
+    __delay_ms(500);
 }
 
 void valid(void) {
