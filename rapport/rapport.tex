@@ -33,8 +33,8 @@
 	\subsection{Fonctionnement d'une MTU}
 	Une MTU se compose de quatre éléments essentiels :
 	\begin{itemize}[label=$-$]
-		\item un ruban de taille infinie, divisé en cases.\\
-		\item une tête de lecture/écriture (qu'on appellera simplement tête de lecture, même si elle permet également d'écrire sur le ruban)\\
+		\item un ruban de taille infinie, divisé en cases.
+		\item une tête de lecture/écriture (qu'on appellera simplement tête de lecture, même si elle permet également d'écrire sur le ruban)
 		\item un état interne
 		\item une table de transition.
 	\end{itemize}
@@ -42,14 +42,14 @@
 	Le ruban permet d'accueillir des symboles qui seront lus et écrits par la tête de lecture.\\
 	La tête de lecture permet de lire et écrire un symbole. Elle peut se déplacer vers la gauche ou la droite.\\
 	\\
-	Une machine de Turing fonctionne donc de la manière suivante :\\
+	Une machine de Turing fonctionne donc de la manière suivante :
 	\begin{enumerate}
-		\item La tête de lecture lit le symbole qu'elle pointe sur le ruban.\\
-		\item En fonction de son état et du symbole lu, la tête de lecture écrit un symbole à la place de celui qu'elle a lu précédemment.\\
-		\item Un déplacement est  choisi en fonction de l'état de la tête de lecture et du symbole lu.\\
-		\item La tête de lecture change d'état.\\
-		\item Le ruban se déplace vers la droite ou vers la gauche selon le déplacement choisi précédemment.\\
-		\item Puis on recommence depuis le 1.\\
+		\item La tête de lecture lit le symbole qu'elle pointe sur le ruban.
+		\item En fonction de son état et du symbole lu, la tête de lecture écrit un symbole à la place de celui qu'elle a lu précédemment.
+		\item Un déplacement est  choisi en fonction de l'état de la tête de lecture et du symbole lu.
+		\item La tête de lecture change d'état.
+		\item Le ruban se déplace vers la droite ou vers la gauche selon le déplacement choisi précédemment.
+		\item Puis on recommence depuis le 1.
 	\end{enumerate}
 	 On peut donc résumer le fonctionnement comme cela : à chaque "cycle", on choisi un symbole à écrire, un nouvel état pour la tête de lecture, et un déplacement, en fonction d'un symbole lu et de l'état actuel. On peut donc définir une fonction de transition, qui va se charger de déterminer l'état futur d'une MTU en fonction de ton état courant. L'ensemble des fonctions de transition permettant de traiter un "mot" peut être représenté sous la forme d'une table de transitions ou d'un graphe de transitions.\\
 	 Un mot traité est dit accepté si une Machine de Turing s'arrête en état final après l'avoir intégralement traité.\\
@@ -63,7 +63,7 @@
 	 	\item $\Gamma$ un ensemble fini de symboles.\\
 	 	\item $\Sigma$ un ensemble fini de symboles d'entrée tel que $\Sigma \subseteq \Gamma$.\\
 	 	\item $B$ un symbole de ruban vide tel que $B \in \Gamma \setminus \Sigma$.
-	 	\item $\delta$ une fonction de transition.
+	 	\item $\delta$ une fonction de transition.\\
 	\end{itemize}
 	 Une fonction de transition se formalise donc comme ceci :\\
 	 \[ \delta (q, Z) \to (p, Y, D) \]
@@ -73,35 +73,36 @@
 	 \\
 	 \includegraphics[width=\textwidth]{img/fig1}
 	 \\
+	 \\
 	 Le but de ce projet va donc être de concevoir une Machine de Turing telle que définie ci-dessus.
 	 \section{Conception}
 	 \subsection{Cahier des charges}
 	 Le cahier des charges est composé de trois parties. La partie 1 doit être traitée absolument, les parties 2 et 3 seront traitées si le temps nous le permet.
 	 \subsubsection{Partie 1}
-	 Dans un premier temps, le système conçu doit être capable de :\\
+	 Dans un premier temps, le système conçu doit être capable de :
 	 \begin{itemize}[label=$-$]
-	 	\item exécuter un programme prédéfini (codé en dur dans le programme microcontrôleur).\\
-	 	\item avoir un mode pas à pas pour l'exécution du programme.\\
-	 	\item avoir un mode continu pour l'exécution du programme.\\
-	 	\item gérer l'affichage de l'état du ruban.\\
-	 	\item gérer l'affichage de la position de la tête de lecture.\\
+	 	\item exécuter un programme prédéfini (codé en dur dans le programme microcontrôleur).
+	 	\item avoir un mode pas à pas pour l'exécution du programme.
+	 	\item avoir un mode continu pour l'exécution du programme.
+	 	\item gérer l'affichage de l'état du ruban.
+	 	\item gérer l'affichage de la position de la tête de lecture.
 	 	\item gérer l'affichage de la table de transition.
 	 \end{itemize}
 	 \subsubsection{Partie 2}
-	 Dans un second temps, il faut rajouter :\\
+	 Dans un second temps, il faut rajouter :
 	 \begin{itemize}[label=$-$]
-	 	\item  la possibilité de sélectionner un programme via un menu.\\
-	 	\item le stockage des programmes à sélectionner.\\
+	 	\item  la possibilité de sélectionner un programme via un menu.
+	 	\item le stockage des programmes à sélectionner.
 	 	\item l'initialisation manuelle du ruban et de la position de la tête de lecture.
 	 \end{itemize}
 	 \subsubsection{Partie 3}
-	 Enfin pour obtenir un système complet, il faut implémenter :\\
+	 Enfin pour obtenir un système complet, il faut implémenter :
 	 \begin{itemize}[label=$-$]
-	 	\item la programmation directement sur la machine d'une table de transition.\\
-	 	\item l'enregistrement de la table de transition programmée dans le support de stockage.\\
-	 	\item un reset de la programmation de la ligne en cours.\\
+	 	\item la programmation directement sur la machine d'une table de transition.
+	 	\item l'enregistrement de la table de transition programmée dans le support de stockage.
+	 	\item un reset de la programmation de la ligne en cours.
 	 	\item l'affichage d'une description du programme.
-	 	\end{itemize}
+	 \end{itemize}
  	\subsection{Définition des besoins}
  	 \subsubsection{Diagramme bête à corne}
  	 \subsubsection{Matrice Moscow}
