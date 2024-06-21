@@ -170,8 +170,18 @@
 	\paragraph{SPI}
 	Nous nous sommes posés la question de l'utilisation du bus SPI pour notre ruban de LEDs. Nous avions aussi besoin de choisir notre type de communication avec la carte SD, et il se trouve que le bus SPI est très utilisé pour ce type de communication.\\
 	\subsection{Spécifications des fonctions et de leurs signaux de communication}
-	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).
-	\includepdf[pages=-]{docs/specs_fonctions_signaux}
+	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).\\
+	\includegraphics[width=\textwidth]{img/f1}
+	\includegraphics[width=\textwidth]{img/f2}
+	\includegraphics[width=\textwidth]{img/f3}
+	\includegraphics[width=\textwidth]{img/f4}
+	\includegraphics[width=\textwidth]{img/f5}
+	\includegraphics[width=\textwidth]{img/s1}
+	\includegraphics[width=\textwidth]{img/s2}
+	\includegraphics[width=\textwidth]{img/s3}
+	\includegraphics[width=\textwidth]{img/s4}
+	\includegraphics[width=\textwidth]{img/s5}
+	\includegraphics[width=\textwidth]{img/s6}
 	\subsection{Choix des composants}
 	\subsubsection{Composants}
 	Nous avions donc besoin des composants suivants :
@@ -207,10 +217,12 @@
 		\item écran LCD I²C \href{https://fr.rs-online.com/web/p/afficheurs-monochromes-lcd/2644045?searchId=b08a66da-698d-420f-a525-b4944d7ccd96&gb=s}{NHD-C0220BiZ-FSW-FBW-3V3M}\\
 		\item LEDs RGB \href{https://fr.rs-online.com/web/p/leds/1651767?gb=s}{L-154A4SURKQBDZGW}
 	\end{itemize}
-	\subsection{Schéma représentatif et schéma structurels}
+	\subsection{Schéma représentatif}
 	Le schéma ci-dessous nous donne une idée de ce à quoi pourrait ressembler notre machine de Turing une fois tous les composants montés :\\
 	\includegraphics[width=\textwidth]{img/rep_machine}
 	\\
+	\\
+	Nous avons essayé de respecter les connexions minimales recommandées de Microchip, trouvées dans la documentation de notre micro-contrôleur à la page 17 (voir \hyperref[sec:an3.1]{Annexe 3.1}).
 	Légende :\\
 	\begin{itemize}[label=$-$]
 		\item 1: Interrupteur d'alimentation
@@ -229,6 +241,17 @@
 		\item 26: Bouton de sélection d'un état d'acceptation
 		\item 27: Lecteur de carte micro-SD
 	\end{itemize}
+	\subsection{Schémas structurels}
+	\subsubsection{MCU}
+	\includegraphics[width=\textwidth]{img/st_mcu}
+	\subsubsection{Expandeurs E/S - I²C}
+	\includegraphics[width=\textwidth]{img/st_exp}
+	\subsubsection{Ecran LCD}
+	\includegraphics[width=\textwidth]{img/st_LCD}
+	\subsubsection{Affichage et programmation de l'état courant}
+	\includegraphics[width=\textwidth]{img/st_etat_courant}
+	\subsubsection{Affichage et programmation de l'état futur}
+	\includegraphics[width=\textwidth]{img/st_etat_futur}
 	\subsection{Tests}
 	\subsection{Conception Logicielle}
 	Cette section ne traitera que la partie 1 du cahier des charges, les parties 2 et 3 ne pouvant être réalisées par manque de temps.\\
@@ -383,7 +406,13 @@
 		FIN TANT QUE
 		FIN error_handler
 	\end{lstlisting}
+	\chapter{Synthèse}
+	Nous sommes conscient d'avoir vu grand, trop grand. Aujourd'hui, nous pensons avoir une partie d'analyse plutôt solide, nous avons également du code, et nous pensons qu'avec du temps en plus, nous aurions pu arriver à une maquette, au moins de la partie 1. Nous avons manqué de chance vis-à-vis des composants, notamment du ruban de LEDs puisque celui qu'on a reçu ne marche pas.\\
+	Nous sommes fiers du travail réalisé, l'analyse est là, les composants sont là, le code est partiellement là, et nous avons pu véritablement mettre en pratique tout ce que nous avons appris en AMIIC et Programmation MCU lors de cette année.\\
 	\chapter{Annexes}
+	\section{Connexions minimales recommandées}
+	\label{sec:an3.1}
+	\includegraphics[width=0.7\textwidth]{img/an1}
 	\section{code}
 	\section{Sources}
 \end{document}
