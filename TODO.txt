@@ -1,5 +1,0 @@
-- Bete a corne
-- matricce moswow
-- modifier les signaux (Newton et lux)
-- justifier les choix des composants
-- commencer le diapo

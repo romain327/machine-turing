@@ -65,7 +65,7 @@
 	\chapter{Introduction}
 	\section{Un peu d'histoire...}
 	En 1928, Le mathématicien allemand David Hilbert énonce le "problème de la décision". Il se demande s'il est possible de trouver une méthode « effectivement calculable » pour décider si une proposition est démontrable. Pour résoudre ce problème, il faut caractériser ce qu'est un procédé effectivement calculable. C'est alors qu'Alan Turing, alors en thèse à Cambridge, conceptualise une machine universelle et prouve grâce à cette dernière que le problème de l'arrêt est indécidable, ce qui permet de donner une réponse négative au problème d'Hilbert pour l'arithmétique. C'est alors qu'Alan Turing introduit les concepts de programme et programmation.\\
-	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendant la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma.\\
+	Ce concept de machine universelle, que nous appellerons désormais Machine de Turing Universelle (MTU) n'est pas réalisable puisqu'il s'agit d'un objet mathématique, dont on va détailler le fonctionnement plus tard. Néanmoins, une Machine de Turing à état fini peut-être construite, et la première vit donc le jour à Bletchley Park pendant la Seconde Guerre Mondiale, où Turing lui-même et une équipe de scientifique triés sur le volet par le MI6\footnote{Services de renseignement britanniques} construisirent une Machine de Turing pour casser les codes allemands générés par la machine Enigma. \cite{mtu_wikip}\\
 	
 	\section{Fonctionnement d'une MTU}
 	Une MTU se compose de quatre éléments essentiels :
@@ -104,14 +104,19 @@
 	\end{itemize}
 	 Une fonction de transition se formalise donc comme ceci :\\
 	 \[ \delta (q, Z) \to (p, Y, D) \]
-	 avec $q$ l'état de la tête de lecture, $Z$ le symbole pointé, $p$ le nouvel état, $Y$ le nouveau symbole et $D$ le déplacement.\\
+	 avec $q$ l'état de la tête de lecture, $Z$ le symbole pointé, $p$ le nouvel état, $Y$ le nouveau symbole et $D$ le déplacement. \cite{mt_wikip}\\
 	 \\
 	 Exemple d'une table de transition pour une Machine de Turing acceptant le langage $L = \lbrace a^kb^k \, \vert \, k > 0 \rbrace$ avec $q_0$ comme état initial (représenté par une $\to$), et $q_4$ comme état d'acceptation (représenté par $\ast$):\\
 	 \\
 	 \includegraphics[width=\textwidth]{img/fig1}
 	 \\
 	 \\
-	 Le but de ce projet va donc être de concevoir une Machine de Turing telle que définie ci-dessus.
+	 Le but de ce projet va donc être de concevoir une Machine de Turing électronique fonctionnant tel que défini ci-dessus.
+	 \chapter{Reprise de l'existant}
+	 Le projet Machine de Turing se base sur un système existant dans le commerce. Le but est de concevoir une machine avec des fonctionnalités se rapprochant de ce modèle existant.\cite{site_mtu_fr} \\
+	 Ce projet avait déjà été donné l'an passé, et nous avons eu accès à l'analyse et la maquette produite par le groupe qui s'en était chargé.\\
+	 Leur maquette fonctionne, elle se compose de 8 boutons poussoirs, d'un micro-contrôleur PIC24FJ64GA002, et de deux matrices de LEDs SparkFun communiquant en SPI.\\
+	 Nous avons trouvé que leur travail pouvait être amélioré, et nous avons proposé un cahier des charges ambitieux au client. Le travail d'analyse effectué l'an passé correspondait à peu près à la partie 1 de notre cahier des charges, c'est pourquoi nous avons décidé de rajouter deux autres parties, pour nous rapprocher le plus possible du système modèle.
 	 \chapter{Conception}
 	 \section{Cahier des charges}
 	 Le cahier des charges est composé de trois parties. La partie 1 doit être traitée absolument, les parties 2 et 3 seront traitées si le temps nous le permet.
@@ -167,7 +172,7 @@
 	\subsubsection{Communication}
 	\paragraph{Bus I²C}
 	Le nombre élevé d'entrées-sorties, du aux grand nombre de boutons poussoirs et composants d'affichage, nous a orienté sur l'utilisation d'expandeurs. Nous nous sommes orientés vers des expandeurs I²C, car l'utilisation du bus I²C nous permettait de gérer toutes nos entrées / sorties en utilisant uniquement deux broches sur le MCU (SDL et SCL). Nous avons ainsi essayé d'avoir un maximum de composants en I²C.\\
-	\paragraph{SPI}
+	\paragraph{Bus SPI}
 	Nous nous sommes posés la question de l'utilisation du bus SPI pour notre ruban de LEDs. Nous avions aussi besoin de choisir notre type de communication avec la carte SD, et il se trouve que le bus SPI est très utilisé pour ce type de communication.\\
 	\subsection{Spécifications des fonctions et de leurs signaux de communication}
 	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).\\
@@ -199,7 +204,7 @@
 	\subsubsection{Choix du micro contrôleur}
 	Nous avions déjà un PIC24FJ64GA002 car c'est le micro-contrôleur que le groupe précédent utilisait. Ce micro-contrôleur s'alimente en 3,3V et possède deux modules I²C et deux modules SPI. Comme nous utilisons des expandeurs pour toutes nous E/S, nous pouvons reprendre ce micro-contrôleur pour notre machine de Turing.\\
 	\subsubsection{Commandes}
-	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
+	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Tous les composants s'alimentent en 3,3 ou 5V. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
 	\paragraph{Commande initiale Farnell}
 	\begin{itemize}[label=$-$]
 		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}
@@ -222,7 +227,7 @@
 	\includegraphics[width=\textwidth]{img/rep_machine}
 	\\
 	\\
-	Nous avons essayé de respecter les connexions minimales recommandées de Microchip, trouvées dans la documentation de notre micro-contrôleur à la page 17 (voir \hyperref[sec:an3.1]{Annexe 3.1}).
+	Nous avons essayé de respecter les connexions minimales recommandées de Microchip, trouvées dans la documentation de notre micro-contrôleur à la page 17 (voir \hyperref[sec:an4.1]{Annexe 4.1}).
 	Légende :\\
 	\begin{itemize}[label=$-$]
 		\item 1: Interrupteur d'alimentation
@@ -253,14 +258,18 @@
 	\subsubsection{Affichage et programmation de l'état futur}
 	\includegraphics[width=\textwidth]{img/st_etat_futur}
 	\subsection{Tests}
+	Nous avons manqué de temps pour effectuer des tests. Néanmoins nous en avons écrits un, permettant de tester la communication entre le micro-contrôleur, et l'expandeur I²C :\\
+	\includegraphics[width=\textwidth]{img/test}
 	\subsection{Conception Logicielle}
 	Cette section ne traitera que la partie 1 du cahier des charges, les parties 2 et 3 ne pouvant être réalisées par manque de temps.\\
+	La table de transition "Addition de deux binaires" que nous avons utilisé pour notre machine de Turing est disponible à \hyperref[sec:an4.2]{l'annexe 4.2}
 	\subsection{Diagramme de Séquences}
 	Les deux diagrammes de séquence ci-dessous montrent respectivement la phase d'initialisation et la phase de déroulement du programme au niveau du micro-contrôleur (on ne prend pas en compte les actions de l'utilisateur).\\
 	Ce sont des diagrammes "best-case", c'est à dire qu'on ne prend pas en compte les erreurs qui pourraient survenir, et on déroule le fonctionnement du programme en supposant que tout se passe bien. Cela permet principalement de ne pas faire trop de diagrammes, ni de diagrammes trop longs.\\
 	\includegraphics[width=\textwidth]{img/initSeq}
 	\includegraphics[width=\textwidth]{img/mainTaskSeq}
 	\subsection{Algorithme}
+	Cet algorithme reprend les deux diagrammes de séquences ci-dessus.
 	\begin{lstlisting}
 		LIB_MACHINE_DE_TURING
 		VARIABLES
@@ -407,17 +416,16 @@
 		FIN error_handler
 	\end{lstlisting}
 	\subsection{Code}
-	Ci-dessous le code correspondant à l'algorithme précédent :
+	Le code ci-dessous implémente, avec quelques différences, l'algorithme précédent :
 	\begin{lstlisting}[language=C]
 	/**
 	* @file    machine_de _turing_main.c
 	* @author 	Romain BROUARD
 	* @date	2024/05
-	* @brief 	main programm of the "machine de turing" project
+	* @brief 	main programm of the machine de turing project
 	*/
 	
 	#include "lib_machine_de_turing.h"
-	#include "lib_sept_seg.h"
 	
 	#ifndef FCY
 	#define FCY 400000UL
@@ -427,6 +435,15 @@
 	mcp23017_desc_t mcp23017_bp;
 	mcp23017_desc_t mcp23017_general;
 	i2c_desc_t I2CModule;
+	sk9822_desc_t sk9822_symbol;
+	sk9822_desc_t sk9822_rw_head;
+	machine_de_turing_desc_t *mtu;
+	uint8_t next_step = 1;
+	
+	
+	led_color_t red;
+	led_color_t green;
+	led_color_t lblue;
 	
 	void Initialiser() {
 		mcp23017_err_t   Res;
@@ -443,44 +460,105 @@
 		Res = mcp23017_init(&mcp23017_7_seg,&mcpCfg);
 		if (Res != MCP23017_OK) error_handler();
 		
+		if(mcp23017_write_reg(&mcp23017_7_seg, REG_IOCONA, 0x00) == MCP23017_ERROR) {
+			error_handler();
+		}
+		
 		// MCP23017 BP
 		mcpCfg.i2c_Address = MCP23017_BP;
 		Res = mcp23017_init(&mcp23017_bp,&mcpCfg);
 		if (Res != MCP23017_OK) error_handler();
+		if(mcp23017_write_reg(&mcp23017_bp, REG_IOCONA, 0x00) == MCP23017_ERROR) {
+			error_handler();
+		}
 		
 		// MCP23017 GENERAL
 		mcpCfg.i2c_Address = MCP23017_GENERAL;
 		Res = mcp23017_init(&mcp23017_general,&mcpCfg);
 		if (Res != MCP23017_OK) error_handler();
+		if(mcp23017_write_reg(&mcp23017_general, REG_IOCONA, 0x00) == MCP23017_ERROR) {
+			error_handler();
+		}
 		
+		red.brightness = 0xFF;
+		red.blue = 0;
+		red.green = 0;
+		red.red = 0xFF;
 		
+		green.brightness = 0xFF;
+		green.blue = 0;
+		green.green = 0xFF;
+		green.red = 0;
 		
+		lblue.brightness = 0xFF;
+		lblue.blue = 0xE6;
+		lblue.green = 0xD8;
+		lblue.red = 0xAD;
+		
+		for(uint8_t i = 0; i<3; i++) {
+			sk9822_symbol.led_strip_buff[i] = lblue;
+		}
+		
+		for(uint8_t i = 14; i<N_LED; i++) {
+			sk9822_symbol.led_strip_buff[i] = lblue;
+		}
+		
+		sk9822_symbol.led_strip_buff[4] = red;
+		sk9822_symbol.led_strip_buff[6] = red;
+		sk9822_symbol.led_strip_buff[8] = red;
+		sk9822_symbol.led_strip_buff[12] = red;
+		sk9822_symbol.led_strip_buff[13] = red;
+		sk9822_symbol.led_strip_buff[5] = green;
+		sk9822_symbol.led_strip_buff[7] = green;
+		sk9822_symbol.led_strip_buff[10] = green;
+		sk9822_symbol.led_strip_buff[11] = green;
+		
+		for(uint8_t i = 0; i<N_LED; i++) {
+			sk9822_rw_head.led_strip_buff[i] = lblue;
+		}
+		sk9822_rw_head.led_strip_buff[13] = red;
+		
+		mtu->accept = 0;
+		mtu->state = 1;
+		mtu->next_symbol = RED;
+		mtu->position = 12;
 	}
 	
 	void MainTask() {
-		uint8_t RegAddr = 0x09;
-		uint8_t RegValue = 0b10100000;
-		uint8_t RegValue2;
-		if(mcp23017_write_reg(&mcp23017_7_seg, 0x0A, RegValue) == MCP23017_ERROR) {
-			error_handler();
+		uint8_t working_mode;
+		uint8_t segValue;
+		uint8_t genValue;
+		if(mcp23017_read_reg(&mcp23017_bp, REG_GPIOA, &working_mode) == MCP23017_ERROR) {
+			working_mode = MANUAL_MODE;
 		}
-		RegValue = 0b00000001;
 		
-		if(mcp23017_write_reg(&mcp23017_7_seg, RegAddr, 0b00000001) == MCP23017_ERROR) {
-			error_handler();
-			while(1);
-		}
-		if(mcp230173_read_reg(&mcp23017_7_seg, RegAddr, &RegValue2) == MCP23017_ERROR) {
-			error_handler();
-		}
-		LATBbits.LATB15 = 0;
-		if(RegValue2 == 0b00000001) {
-			valid();
-			while(1);
-		}
-		else {
-			error_handler();
-			while(1);
+		while(!mtu->accept) {
+			get_next_transition(mtu);
+			
+			segValue = int_to_bin(mtu->state);
+			if(mcp23017_write_reg(&mcp23017_7_seg, REG_OLATB, segValue) == MCP23017_ERROR) {
+				error_handler();
+			}
+			segValue = int_to_bin(mtu->next_state);
+			if(mcp23017_write_reg(&mcp23017_7_seg, REG_OLATA, segValue) == MCP23017_ERROR) {
+				error_handler();
+			}
+			
+			genValue = generate_general_reg_value(mtu->symbol, mtu->next_symbol, mtu->next_move);
+			if(mcp23017_write_reg(&mcp23017_7_seg, REG_OLATB, segValue) == MCP23017_ERROR) {
+				error_handler();
+			}
+			
+			sk9822_rw_head.led_strip_buff[mtu->position] = lblue;
+			sk9822_rw_head.led_strip_buff[mtu->next_move] = red;
+			mtu->state = mtu->next_state;
+			mtu->position = mtu->next_move;
+			mtu->symbol = mtu->next_symbol;
+			
+			if(!working_mode) {
+				while(next_step);
+			}
+			
 		}
 	}
 	
@@ -488,18 +566,25 @@
 		LATBbits.LATB15 = 1;
 		__delay_ms(500);
 	}
-	
-	void valid(void) {
-		LATBbits.LATB14 = 1;
-	}
 	\end{lstlisting}
 	\chapter{Synthèse}
 	Nous sommes conscient d'avoir vu grand, trop grand. Aujourd'hui, nous pensons avoir une partie d'analyse plutôt solide, nous avons également du code, et nous pensons qu'avec du temps en plus, nous aurions pu arriver à une maquette, au moins de la partie 1. Nous avons manqué de chance vis-à-vis des composants, notamment du ruban de LEDs puisque celui qu'on a reçu ne marche pas.\\
 	Nous sommes fiers du travail réalisé, l'analyse est là, les composants sont là, le code est partiellement là, et nous avons pu véritablement mettre en pratique tout ce que nous avons appris en AMIIC et Programmation MCU lors de cette année.\\
+	\\
+	Ce rapport ne contient pas tous les documents produits, le reste des est disponible dans le dépôt Teams, ou bien sur github, au lien suivant : \url{https://github.com/romain327/machine-turing}. On y trouve notamment les datasheets des composants utilisés, le projet MPLABX contenant les différentes librairies, les schémas structurels, etc.\\
+	\chapter{Remerciements}
+	Nous remercions Mr. Bocquillon pour nous avoir encadré tout au long de ce projet.\\
+	Nous remercions Mr. Rolland pour ses avis et conseils nous ayant permis d'affiner notre analyse.\\
+	Nous remercions nos camarades de classe : Lucien, François et Kevin pour avoir répondu à nos questions et nous avoir conseillé.\\
 	\chapter{Annexes}
+	Ce rapport a été écrit en LaTeX, et la bibliographie réalisée avec BibTeX.
 	\section{Connexions minimales recommandées}
-	\label{sec:an3.1}
+	\label{sec:an4.1}
 	\includegraphics[width=0.7\textwidth]{img/an1}
-	\section{Code}
-	\section{Sources}
+	\section{Table de transition "Addition de deux nombres binaires"}
+	\label{sec:an4.2}
+	\includegraphics[width=0.9\textwidth]{img/addition_binaire}
+	\bibliographystyle{plain}
+	\bibliography{biblio}
+	
 \end{document}

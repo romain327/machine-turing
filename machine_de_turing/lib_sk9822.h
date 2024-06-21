@@ -36,12 +36,19 @@ typedef void (*fptr_U8_t)(uint8_t);  //!< function pointer with uint8_t paramete
    *  @var led_color_t::blue
    *    blue color uint8_t
    */
+
+#define N_LED 30
 typedef struct{
 	uint8_t brightness;	
 	uint8_t red;
 	uint8_t green;
 	uint8_t blue;
 }led_color_t;
+
+typedef struct {
+    fptr_U8_t spi_tx = NULL_POINTER;
+    led_color_t led_strip_buff[N_LED];
+} sk9822_desc_t;
 
 void sk9822_init(fptr_U8_t spi_transmit);
 

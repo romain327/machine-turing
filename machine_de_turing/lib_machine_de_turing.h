@@ -14,10 +14,30 @@
 
 #include "lib_i2c_pic24_ll.h"
 #include "lib_mcp23017.h"
+#include "lib_calculs.h"
+#include "lib_sept_seg.h"
+#include "lib_sk9822.h"
 
-typedef struct {
-    uint8_t etat;
-} machine_de_turing_desc;
+typedef enum {
+    MANUAL_MODE,
+    AUTOMATIC_MODE
+} working_mode_t;
+
+typedef enum {
+    RED,
+    GREEN,
+    LIGHT_BLUE,
+    YELLOW,
+    PURPLE,
+    DARK_BLUE,
+    ORANGE
+} mtu_colors_t;
+
+typedef enum {
+    LEFT,
+    RIGHT,
+    STILL
+} mtu_move_t;
 
 void Initialiser();
 void MainTask();

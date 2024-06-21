@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=machine_de_turing_main.c lib_i2c_pic24_ll.c lib_mcp23017.c lib_machine_de_turing.c lib_sept_seg.c lib_sk9822.c lib_l154a4surkqbdzgw.c lib_spi.c
+SOURCEFILES_QUOTED_IF_SPACED=machine_de_turing_main.c lib_i2c_pic24_ll.c lib_mcp23017.c lib_machine_de_turing.c lib_sept_seg.c lib_sk9822.c lib_l154a4surkqbdzgw.c lib_spi.c lib_calculs.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/machine_de_turing_main.o ${OBJECTDIR}/lib_i2c_pic24_ll.o ${OBJECTDIR}/lib_mcp23017.o ${OBJECTDIR}/lib_machine_de_turing.o ${OBJECTDIR}/lib_sept_seg.o ${OBJECTDIR}/lib_sk9822.o ${OBJECTDIR}/lib_l154a4surkqbdzgw.o ${OBJECTDIR}/lib_spi.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/machine_de_turing_main.o.d ${OBJECTDIR}/lib_i2c_pic24_ll.o.d ${OBJECTDIR}/lib_mcp23017.o.d ${OBJECTDIR}/lib_machine_de_turing.o.d ${OBJECTDIR}/lib_sept_seg.o.d ${OBJECTDIR}/lib_sk9822.o.d ${OBJECTDIR}/lib_l154a4surkqbdzgw.o.d ${OBJECTDIR}/lib_spi.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/machine_de_turing_main.o ${OBJECTDIR}/lib_i2c_pic24_ll.o ${OBJECTDIR}/lib_mcp23017.o ${OBJECTDIR}/lib_machine_de_turing.o ${OBJECTDIR}/lib_sept_seg.o ${OBJECTDIR}/lib_sk9822.o ${OBJECTDIR}/lib_l154a4surkqbdzgw.o ${OBJECTDIR}/lib_spi.o ${OBJECTDIR}/lib_calculs.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/machine_de_turing_main.o.d ${OBJECTDIR}/lib_i2c_pic24_ll.o.d ${OBJECTDIR}/lib_mcp23017.o.d ${OBJECTDIR}/lib_machine_de_turing.o.d ${OBJECTDIR}/lib_sept_seg.o.d ${OBJECTDIR}/lib_sk9822.o.d ${OBJECTDIR}/lib_l154a4surkqbdzgw.o.d ${OBJECTDIR}/lib_spi.o.d ${OBJECTDIR}/lib_calculs.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/machine_de_turing_main.o ${OBJECTDIR}/lib_i2c_pic24_ll.o ${OBJECTDIR}/lib_mcp23017.o ${OBJECTDIR}/lib_machine_de_turing.o ${OBJECTDIR}/lib_sept_seg.o ${OBJECTDIR}/lib_sk9822.o ${OBJECTDIR}/lib_l154a4surkqbdzgw.o ${OBJECTDIR}/lib_spi.o
+OBJECTFILES=${OBJECTDIR}/machine_de_turing_main.o ${OBJECTDIR}/lib_i2c_pic24_ll.o ${OBJECTDIR}/lib_mcp23017.o ${OBJECTDIR}/lib_machine_de_turing.o ${OBJECTDIR}/lib_sept_seg.o ${OBJECTDIR}/lib_sk9822.o ${OBJECTDIR}/lib_l154a4surkqbdzgw.o ${OBJECTDIR}/lib_spi.o ${OBJECTDIR}/lib_calculs.o
 
 # Source Files
-SOURCEFILES=machine_de_turing_main.c lib_i2c_pic24_ll.c lib_mcp23017.c lib_machine_de_turing.c lib_sept_seg.c lib_sk9822.c lib_l154a4surkqbdzgw.c lib_spi.c
+SOURCEFILES=machine_de_turing_main.c lib_i2c_pic24_ll.c lib_mcp23017.c lib_machine_de_turing.c lib_sept_seg.c lib_sk9822.c lib_l154a4surkqbdzgw.c lib_spi.c lib_calculs.c
 
 
 
@@ -137,6 +137,12 @@ ${OBJECTDIR}/lib_spi.o: lib_spi.c  .generated_files/flags/default/498c3e965ccffd
 	@${RM} ${OBJECTDIR}/lib_spi.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lib_spi.c  -o ${OBJECTDIR}/lib_spi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lib_spi.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/lib_calculs.o: lib_calculs.c  .generated_files/flags/default/cf0a6430f6b256fab0b604efc160ee3be639b4a5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lib_calculs.o.d 
+	@${RM} ${OBJECTDIR}/lib_calculs.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  lib_calculs.c  -o ${OBJECTDIR}/lib_calculs.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lib_calculs.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/machine_de_turing_main.o: machine_de_turing_main.c  .generated_files/flags/default/77ebaec09c90a453f48183743d16927ace46aaa4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -185,6 +191,12 @@ ${OBJECTDIR}/lib_spi.o: lib_spi.c  .generated_files/flags/default/8884051640bd25
 	@${RM} ${OBJECTDIR}/lib_spi.o.d 
 	@${RM} ${OBJECTDIR}/lib_spi.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lib_spi.c  -o ${OBJECTDIR}/lib_spi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lib_spi.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/lib_calculs.o: lib_calculs.c  .generated_files/flags/default/d2dd280399bd0737e40b3abc3e9ca8e7bc457bc7 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lib_calculs.o.d 
+	@${RM} ${OBJECTDIR}/lib_calculs.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  lib_calculs.c  -o ${OBJECTDIR}/lib_calculs.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lib_calculs.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

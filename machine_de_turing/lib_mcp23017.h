@@ -17,8 +17,12 @@
 #define MCP23017_GENERAL 0b0100011
 
 // internal regs
-#define REG_GPIO1 0x09
-
+#define REG_IOCONA   0x0A
+#define REG_IOCONB   0x0B
+#define REG_GPIOA    0x12
+#define REG_GPIOB    0x13
+#define REG_OLATA    0x14
+#define REG_OLATB    0x15
 /*
  Masks and reg values
  */
