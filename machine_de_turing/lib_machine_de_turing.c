@@ -3,9 +3,8 @@
  * @author 	Romain BROUARD
  * @date	2024/05
  * @brief 	main programm of the machine de turing project
- *  
- *
  */
+
 #include "lib_machine_de_turing.h"
 #include "lib_sept_seg.h"
 
@@ -58,27 +57,13 @@ void MainTask() {
 
     if(mcp23017_write_reg(&mcp23017_7_seg, RegAddr, 0b00000001) == MCP23017_ERROR) {
         error_handler();
-        while(1);
     }
     if(mcp230173_read_reg(&mcp23017_7_seg, RegAddr, &RegValue2) == MCP23017_ERROR) {
         error_handler();
-    }
-    LATBbits.LATB15 = 0;
-    if(RegValue2 == 0b00000001) {
-        valid();
-        while(1);
-    }
-    else {
-        error_handler();
-        while(1);
     }
 }
 
 void error_handler(void){
     LATBbits.LATB15 = 1;
     __delay_ms(500);
-}
-
-void valid(void) {
-    LATBbits.LATB14 = 1;
 }
