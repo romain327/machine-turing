@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.11)  11 JUN 2024 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.6.17)  21 JUN 2024 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -71,9 +71,9 @@ Package: babel 2022/12/26 3.84 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2023/01/02 v3.5p French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language4). Reported on input line 91.
+(babel)             (\language3). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language4). Reported on input line 92.
+(babel)             (\language3). Reported on input line 92.
 \FB@nonchar=\count199
 Package babel Info: Making : an active character on input line 395.
 Package babel Info: Making ; an active character on input line 396.
@@ -594,7 +594,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
-<img/fig1.png, id=144, 707.64375pt x 207.02344pt>
+<img/fig1.png, id=154, 707.64375pt x 207.02344pt>
 File: img/fig1.png Graphic file (type png)
 <use img/fig1.png>
 Package pdftex.def Info: img/fig1.png  used on input line 111.
@@ -616,7 +616,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--115
 
 [3] [4 <./img/fig1.png>]
 Chapitre 2.
-<img/bete_a_corne.png, id=163, 1606.0pt x 903.375pt>
+<img/bete_a_corne.png, id=174, 1606.0pt x 903.375pt>
 File: img/bete_a_corne.png Graphic file (type png)
 <use img/bete_a_corne.png>
 Package pdftex.def Info: img/bete_a_corne.png  used on input line 145.
@@ -624,7 +624,7 @@ Package pdftex.def Info: img/bete_a_corne.png  used on input line 145.
 [5
 
 ]
-<img/moscow.png, id=170, 1606.0pt x 903.375pt>
+<img/moscow.png, id=180, 1606.0pt x 903.375pt>
 File: img/moscow.png Graphic file (type png)
 <use img/moscow.png>
 Package pdftex.def Info: img/moscow.png  used on input line 147.
@@ -635,12 +635,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
  []
 
 [6 <./img/bete_a_corne.png> <./img/moscow.png>]
-<img/SFN1.png, id=178, 1056.94875pt x 467.49657pt>
+<img/SFN1.png, id=188, 1056.94875pt x 467.49657pt>
 File: img/SFN1.png Graphic file (type png)
 <use img/SFN1.png>
 Package pdftex.def Info: img/SFN1.png  used on input line 152.
 (pdftex.def)             Requested size: 483.69687pt x 213.93822pt.
-<img/SF1D.png, id=179, 1056.94875pt x 1177.39874pt>
+<img/SF1D.png, id=189, 1056.94875pt x 1177.39874pt>
 File: img/SF1D.png Graphic file (type png)
 <use img/SF1D.png>
 Package pdftex.def Info: img/SF1D.png  used on input line 155.
@@ -656,27 +656,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--160
  []
 
 [7 <./img/SFN1.png>] [8 <./img/SF1D.png>]
-<img/SF2DFP2.png, id=190, 1056.94875pt x 1409.265pt>
+<img/SF2DFP2.png, id=200, 1056.94875pt x 1409.265pt>
 File: img/SF2DFP2.png Graphic file (type png)
 <use img/SF2DFP2.png>
 Package pdftex.def Info: img/SF2DFP2.png  used on input line 161.
 (pdftex.def)             Requested size: 483.69687pt x 644.91522pt.
  [9 <./img/SF2DFP2.png (PNG copy)>]
-<img/SF2DFP3.png, id=195, 1056.94875pt x 1409.265pt>
+<img/SF2DFP3.png, id=205, 1056.94875pt x 1409.265pt>
 File: img/SF2DFP3.png Graphic file (type png)
 <use img/SF2DFP3.png>
 Package pdftex.def Info: img/SF2DFP3.png  used on input line 164.
 (pdftex.def)             Requested size: 483.69687pt x 644.91522pt.
 
 [10] [11 <./img/SF2DFP3.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=204, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=214, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf  used on input line 1
-68.
+74.
 (pdftex.def)             Requested size: 845.07512pt x 597.551pt.
 
 
@@ -685,7 +695,7 @@ F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf  used on input line 1
-68.
+74.
 (pdftex.def)             Requested size: 845.07512pt x 597.551pt.
 
 
@@ -695,331 +705,297 @@ F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=207, page=1, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=217, page=1, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 1>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page1 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 845.07512pt x 597.551pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 1>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page1 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [12]
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 1>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page1 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 1>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page1 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 1>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page1 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
  [13 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=260, page=2, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=272, page=2, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 2>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page2 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 2>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page2 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 2>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page2 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [14 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=266, page=3, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=278, page=3, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 3>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page3 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 3>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page3 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 3>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page3 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [15 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=272, page=4, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=284, page=4, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 4>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page4 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 4>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page4 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 4>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page4 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [16 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=278, page=5, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=290, page=5, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 5>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page5 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 5>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page5 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 5>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page5 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [17 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=284, page=6, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=296, page=6, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 6>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page6 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 6>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page6 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 6>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page6 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [18 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=291, page=7, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=303, page=7, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 7>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page7 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 7>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page7 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 7>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page7 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [19 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=297, page=8, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=310, page=8, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 8>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page8 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 8>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page8 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 8>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page8 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [20 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=304, page=9, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=316, page=9, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 9>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page9 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 9>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page9 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 9>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page9 used on input
- line 168.
+ line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [21 <./docs/specs_fonctions_signaux.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./docs/specs_fonctions_signaux.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<docs/specs_fonctions_signaux.pdf, id=310, page=10, 845.07718pt x 597.55246pt>
+<docs/specs_fonctions_signaux.pdf, id=322, page=10, 845.07718pt x 597.55246pt>
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 10>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page10 used on inpu
-t line 168.
+t line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 10>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page10 used on inpu
-t line 168.
+t line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 File: docs/specs_fonctions_signaux.pdf Graphic file (type pdf)
 <use docs/specs_fonctions_signaux.pdf, page 10>
 Package pdftex.def Info: docs/specs_fonctions_signaux.pdf , page10 used on inpu
-t line 168.
+t line 174.
 (pdftex.def)             Requested size: 597.55899pt x 422.5328pt.
 [22 <./docs/specs_fonctions_signaux.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
+<img/rep_machine.png, id=339, 1409.265pt x 1056.94875pt>
+File: img/rep_machine.png Graphic file (type png)
+<use img/rep_machine.png>
+Package pdftex.def Info: img/rep_machine.png  used on input line 212.
+(pdftex.def)             Requested size: 483.69687pt x 362.76077pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+[23] [24 <./img/rep_machine.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-<img/initSeq.png, id=327, 1658.195pt x 1045.9075pt>
+<img/initSeq.png, id=350, 1658.195pt x 1045.9075pt>
 File: img/initSeq.png Graphic file (type png)
 <use img/initSeq.png>
-Package pdftex.def Info: img/initSeq.png  used on input line 195.
+Package pdftex.def Info: img/initSeq.png  used on input line 238.
 (pdftex.def)             Requested size: 483.69687pt x 305.07689pt.
-<img/mainTaskSeq.png, id=328, 2170.1075pt x 2089.8075pt>
+<img/mainTaskSeq.png, id=351, 2170.1075pt x 2089.8075pt>
 File: img/mainTaskSeq.png Graphic file (type png)
 <use img/mainTaskSeq.png>
-Package pdftex.def Info: img/mainTaskSeq.png  used on input line 196.
+Package pdftex.def Info: img/mainTaskSeq.png  used on input line 239.
 (pdftex.def)             Requested size: 483.69687pt x 465.78589pt.
-[23] [24 <./img/initSeq.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-98.
+[25 <./img/initSeq.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [25 <./img/mainTaskSeq.png>] [26] [27] [28]
+) [26 <./img/mainTaskSeq.png>] [27] [28] [29]
 Chapitre 3.
-[29
+[30
 
 ] (./rapport.aux)
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 7B3D76C7057C6589F7B00929CF74783D;3415.
+(rerunfilecheck)             Checksum: 17B35D45AD1D3C9296AAB7A4078B4B6F;3671.
  ) 
 Here is how much of TeX's memory you used:
- 14897 strings out of 478022
- 233832 string characters out of 5839674
- 2105330 words of memory out of 5000000
- 34635 multiletter control sequences out of 15000+600000
- 526138 words of font info for 59 fonts, out of 8000000 for 9000
+ 14916 strings out of 478022
+ 234190 string characters out of 5839674
+ 2162330 words of memory out of 5000000
+ 34648 multiletter control sequences out of 15000+600000
+ 526479 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,17n,76p,715b,1935s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.60
 0pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.
 600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm120
-0.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1
-440.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
-m1000.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm0800.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecbx1728.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1200.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx1200.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx2488.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecrm1440.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on rapport.pdf (30 pages, 1060260 bytes).
+0.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1
+200.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
+x1440.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm1000.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm0800.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1728.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecrm1200.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecbx1200.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecbx2488.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm1440.600pk> </home/romain/.texlive2022/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on rapport.pdf (31 pages, 1074633 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 204 named destinations out of 1000 (max. 500000)
- 295 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 989 PDF objects out of 1000 (max. 8388607)
+ 549 compressed objects within 6 object streams
+ 208 named destinations out of 1000 (max. 500000)
+ 316 words of extra memory for PDF output out of 10000 (max. 10000000)
 

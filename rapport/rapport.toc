@@ -15,14 +15,22 @@
 \contentsline {subsection}{\numberline {2.3.2}SFnD}{8}{subsection.2.3.2}%
 \contentsline {subsubsection}{FP2 :}{9}{subsection.2.3.2}%
 \contentsline {subsubsection}{FP3 :}{11}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Spécifications des fonctions et de leurs signaux de communication}{12}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Choix des composants}{23}{subsection.2.3.4}%
-\contentsline {subsubsection}{Commande initiale Farnell}{23}{subsection.2.3.4}%
-\contentsline {paragraph}{Commande réelle (RS et Amazon)}{23}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Schéma représentatif et schéma électrique}{23}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Tests}{23}{subsection.2.3.6}%
-\contentsline {subsection}{\numberline {2.3.7}Conception Logicielle}{23}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}Diagramme de Séquences}{24}{subsection.2.3.8}%
-\contentsline {subsection}{\numberline {2.3.9}Algorithme}{25}{subsection.2.3.9}%
-\contentsline {chapter}{\numberline {3}Annexes}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Sources}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {2.3.3}Choix des technologies}{12}{subsection.2.3.3}%
+\contentsline {subsubsection}{Communication}{12}{subsection.2.3.3}%
+\contentsline {paragraph}{Bus I²C}{12}{subsection.2.3.3}%
+\contentsline {paragraph}{SPI}{12}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Spécifications des fonctions et de leurs signaux de communication}{12}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Choix des composants}{23}{subsection.2.3.5}%
+\contentsline {subsubsection}{Composants}{23}{subsection.2.3.5}%
+\contentsline {subsubsection}{Choix du micro contrôleur}{23}{subsection.2.3.5}%
+\contentsline {subsubsection}{Commandes}{23}{subsection.2.3.5}%
+\contentsline {paragraph}{Commande initiale Farnell}{23}{subsection.2.3.5}%
+\contentsline {paragraph}{Commande réelle (RS et Amazon)}{23}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Schéma représentatif et schéma structurels}{24}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}Tests}{25}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}Conception Logicielle}{25}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.9}Diagramme de Séquences}{25}{subsection.2.3.9}%
+\contentsline {subsection}{\numberline {2.3.10}Algorithme}{26}{subsection.2.3.10}%
+\contentsline {chapter}{\numberline {3}Annexes}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}code}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sources}{30}{section.3.2}%

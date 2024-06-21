@@ -163,29 +163,72 @@
 	\subsubsection{FP3 :}
 	\includegraphics[width=\textwidth]{img/SF2DFP3}
 	De la même manière que pour FP2, FP3 est en réalité un ensemble de fonctions plus spécifiques qui vont chacune avoir un rôle bien précis dans le retour des informations utilisateur. On a donc une grande variété de fonctions d'affichage qui vont, de la même manière que pour les sous-fonctions de FP2, être spécifiées ci-dessous.
+	\subsection{Choix des technologies}
+	\subsubsection{Communication}
+	\paragraph{Bus I²C}
+	Le nombre élevé d'entrées-sorties, du aux grand nombre de boutons poussoirs et composants d'affichage, nous a orienté sur l'utilisation d'expandeurs. Nous nous sommes orientés vers des expandeurs I²C, car l'utilisation du bus I²C nous permettait de gérer toutes nos entrées / sorties en utilisant uniquement deux broches sur le MCU (SDL et SCL). Nous avons ainsi essayé d'avoir un maximum de composants en I²C.\\
+	\paragraph{SPI}
+	Nous nous sommes posés la question de l'utilisation du bus SPI pour notre ruban de LEDs. Nous avions aussi besoin de choisir notre type de communication avec la carte SD, et il se trouve que le bus SPI est très utilisé pour ce type de communication.\\
 	\subsection{Spécifications des fonctions et de leurs signaux de communication}
 	Nous avons donc spécifié ci-dessous, pour chaque fonction, son rôle ainsi que ses signaux d'entrée et/ou de sortie. Nous avons également précisé le rôle ainsi que ce qui fait l'essence même de chaque signal (type, etc.).
 	\includepdf[pages=-]{docs/specs_fonctions_signaux}
 	\subsection{Choix des composants}
-	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
-	\subsubsection{Commande initiale Farnell}
+	\subsubsection{Composants}
+	Nous avions donc besoin des composants suivants :
 	\begin{itemize}[label=$-$]
-		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}\\
-		\item afficheurs 7 segments \href{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}{HDSM-283B}\\
-		\item LEDs RGB \href{https://fr.farnell.com/kingbright/l-59eyc/led-5mm-tricolore/dp/1168662}{L-59EYC}\\
-		\item expandeurs IO - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}\\
-		\item écran LCD I2C \href{https://fr.farnell.com/midas/mc21605c6w-bnmlwi-v2/afficheur-alphanumerique-16x2/dp/2748649}{MC21605C6W-BNMLWI-V2}\\
-		\item boutons poussoirs \href{https://fr.farnell.com/panasonic/ese20c321/commutateur-bouton-pouss-momentane/dp/2079613}{ESE20C321}\\
-		\item commutateurs \href{https://fr.farnell.com/multicomp/2as2t2a1m7re/switch-toggle-spdt-on-mom/dp/1550118}{2AS2T2A1M7RE}\\
+		\item 2 rubans de LEDs RGB communicant en SPI
+		\item 2 afficheurs 7 segments
+		\item 1 écran LCD communicant en I²C
+		\item 2 LEDs RBG
+		\item 2 LEDs pour indiquer le mouvement, et 1 LED d'erreur
+		\item 15 boutons poussoirs
+		\item 2 commutateurs à bascule
+		\item 1 lecteur de carte micro-SD communicant en SPI
+		\item 3 expandeurs E/S - I²C de 16 I/O
+	\end{itemize}
+	\subsubsection{Choix du micro contrôleur}
+	Nous avions déjà un PIC24FJ64GA002 car c'est le micro-contrôleur que le groupe précédent utilisait. Ce micro-contrôleur s'alimente en 3,3V et possède deux modules I²C et deux modules SPI. Comme nous utilisons des expandeurs pour toutes nous E/S, nous pouvons reprendre ce micro-contrôleur pour notre machine de Turing.\\
+	\subsubsection{Commandes}
+	Initialement, nous avions fait un premier choix de composants qui correspondait à nos spécificités. Toute la commande était prévue chez Farnell, mais nous avons dû nous raviser et mettre au point une autre liste à cause du délai de commande trop important.\\
+	\paragraph{Commande initiale Farnell}
+	\begin{itemize}[label=$-$]
+		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}
+		\item afficheurs 7 segments \href{https://fr.farnell.com/broadcom-limited/hdsm-283b/afficheur-a-led-cms-7mm-bleu-cc/dp/1659312}{HDSM-283B}
+		\item LEDs RGB \href{https://fr.farnell.com/kingbright/l-59eyc/led-5mm-tricolore/dp/1168662}{L-59EYC}
+		\item expandeurs E/S - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}
+		\item écran LCD I2C \href{https://fr.farnell.com/midas/mc21605c6w-bnmlwi-v2/afficheur-alphanumerique-16x2/dp/2748649}{MC21605C6W-BNMLWI-V2}
+		\item boutons poussoirs \href{https://fr.farnell.com/panasonic/ese20c321/commutateur-bouton-pouss-momentane/dp/2079613}{ESE20C321}
+		\item commutateurs \href{https://fr.farnell.com/multicomp/2as2t2a1m7re/switch-toggle-spdt-on-mom/dp/1550118}{2AS2T2A1M7RE}
 	\end{itemize}
 	\paragraph{Commande réelle (RS et Amazon)}
 	\begin{itemize}[label=$-$]
-		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}\\
-		\item expandeurs IO - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}\\
-		\item écran LCD I2C \href{https://fr.rs-online.com/web/p/afficheurs-monochromes-lcd/2644045?searchId=b08a66da-698d-420f-a525-b4944d7ccd96&gb=s}{NHD-C0220BiZ-FSW-FBW-3V3M}\\
-		\item LEDs RGB \href{https://fr.rs-online.com/web/p/leds/1651767?gb=s}{L-154A4SURKQBDZGW}\\
+		\item rubans de LEDs adressables \href{https://fr.aliexpress.com/item/1005006918408592.html?spm=a2g0o.productlist.main.19.fbb0788296kxRo&algo_pvid=72d2c9a9-ec47-4e4b-9d14-7e90be35485c&algo_exp_id=72d2c9a9-ec47-4e4b-9d14-7e90be35485c-9&pdp_npi=4%40dis!EUR!18.92!18.92!!!145.68!145.68!%402103888a17169934968957029e0b2f!12000038723750387!sea!FR!0!AB&curPageLogUid=lAauznpLAY1Y&utparam-url=scene%3Asearch%7Cquery_from%3A}{SK9822}
+		\item expandeurs E/S - I²C \href{https://fr.farnell.com/microchip/mcp23017-e-sp/16-bit-expander-i-o-i2c-i-f/dp/1332088}{MCP23017}
+		\item écran LCD I²C \href{https://fr.rs-online.com/web/p/afficheurs-monochromes-lcd/2644045?searchId=b08a66da-698d-420f-a525-b4944d7ccd96&gb=s}{NHD-C0220BiZ-FSW-FBW-3V3M}\\
+		\item LEDs RGB \href{https://fr.rs-online.com/web/p/leds/1651767?gb=s}{L-154A4SURKQBDZGW}
 	\end{itemize}
-	\subsection{Schéma représentatif et schéma électrique}
+	\subsection{Schéma représentatif et schéma structurels}
+	Le schéma ci-dessous nous donne une idée de ce à quoi pourrait ressembler notre machine de Turing une fois tous les composants montés :\\
+	\includegraphics[width=\textwidth]{img/rep_machine}
+	\\
+	Légende :\\
+	\begin{itemize}[label=$-$]
+		\item 1: Interrupteur d'alimentation
+		\item 2: Ruban de LEDs pour l'affichage des symboles
+		\item 3: Ruban de LEDs pour l'affichage de la tête de lecture
+		\item 4: Commutateur pour choisir entre le mode pas à pas et automatique
+		\item 5: Bouton de réinitialisation lors de l'initialisation manuelle des rubans de LEDs
+		\item 6: Ecran LCD pour l'affichage du menu
+		\item 7, 8, 9: Boutons de navigation dans le menu (monter, sélectionner, descendre)
+		\item 10: Bouton de lancement du programme. Sert également à passer à l'étape suivante en mode pas à pas
+		\item 11 | 20: Afficheurs 7 segments pour l'affichage de l'état courant | de l'état suivant
+		\item 12 | 21: LEDs RGB pour l'affichage du symbole courant | du symbole suivant
+		\item 13, 14, 15, 16 | 22, 23, 24, 25: Boutons de décrémentation, validation, incrémentation, ré-initialisation de l'état et du symbole courant | de l'état et du symbole futur
+		\item 17: Bouton de changement du déplacement pour l'état suivant
+		\item 18, 19: LED représentant le déplacement pour l'état suivant (gauche si LED 18 allumée, droite si LED 19 allumée)
+		\item 26: Bouton de sélection d'un état d'acceptation
+		\item 27: Lecteur de carte micro-SD
+	\end{itemize}
 	\subsection{Tests}
 	\subsection{Conception Logicielle}
 	Cette section ne traitera que la partie 1 du cahier des charges, les parties 2 et 3 ne pouvant être réalisées par manque de temps.\\
@@ -198,147 +241,149 @@
 	\begin{lstlisting}
 		LIB_MACHINE_DE_TURING
 		VARIABLES
-		mcp23017_desc_t mpc23017_7_seg
-		mcp23017_desc_t mcp23017_bp
-		mcp23017_desc_t mcp23017_general
-		i2c_desc_t I2CModule
+			mcp23017_desc_t mpc23017_7_seg
+			mcp23017_desc_t mcp23017_bp
+			mcp23017_desc_t mcp23017_general
+			i2c_desc_t I2CModule
 		
 		ENUMERATIONS
-		mcp23017_err_t
-		MCP23017_OK
-		MCP23017_ERROR
+			mcp23017_err_t
+			MCP23017_OK
+			MCP23017_ERROR
 		
 		mcp23017_i2c_init_type_t
-		INIT_WITH_I2C1
-		INIT_WITH_I2C2
-		INIT_ALREADY_DONE
+			INIT_WITH_I2C1
+			INIT_WITH_I2C2
+			INIT_ALREADY_DONE
 		
 		working_mode_t
-		MANUAL_MODE
-		AUTOMATIC_MODE
+			MANUAL_MODE
+			AUTOMATIC_MODE
 		
 		STRUCTURES
 		mcp23017_desc_t
-		i2c_desc_t  *pi2c
-		uint8_t     i2c_Address
+			i2c_desc_t  *pi2c
+			uint8_t     i2c_Address
 		
 		mcp23017_config_t
-		i2c_desc_t  *pi2c;                      
-		mcp23017_i2c_init_type_t    initType;   
-		uint8_t i2c_Address;
+			i2c_desc_t  *pi2c;                      
+			mcp23017_i2c_init_type_t    initType;   
+			uint8_t i2c_Address;
 		
 		
 		machine_de_turing_desc_t
-		uint8_t state
-		uint8_t symbol
-		uint8_t next_state
-		uint8_t next_symbol
-		uint8_t next_move
+			uint8_t state
+			uint8_t symbol
+			uint8_t next_state
+			uint8_t next_symbol
+			uint8_t next_move
 		
 		CONSTANTES
-		MCP23017_7_SEG_ADDRESS      0100001
-		MCP23017_BP_ADDRESS         0100010
-		MCP23017_GENERAL_ADDRESS    0100011
+			MCP23017_7_SEG_ADDRESS      0100001
+			MCP23017_BP_ADDRESS         0100010
+			MCP23017_GENERAL_ADDRESS    0100011
 		
-		MCP23017_IOCONA_ADDRESS     0x0A
-		MCP23017_IOA_ADDRESS        0x12
-		MCP23017_IOB_ADDRESS        0x13
+			MCP23017_IOCONA_ADDRESS     0x0A
+			MCP23017_IOA_ADDRESS        0x12
+			MCP23017_IOB_ADDRESS        0x13
 		
 		DEBUT
-		PROCEDURE Initialiser()
-		VARIABLES
-		mcp23017_err_t   Res;
-		mcp23017_config_t    mcpCfg;
-		DEBUT
-		Configuration du port B en sortie
+			PROCEDURE Initialiser()
+			VARIABLES
+				mcp23017_err_t   Res;
+				mcp23017_config_t    mcpCfg;
+			DEBUT
+				Configuration du port B en sortie
 		
-		// MPC23017 7 segs
-		mcpCfg.pi2c = &I2CModule;
-		Initialisation avec I2C_1
-		Adresse = MCP23017_7_SEG_ADRESS;
+				// MPC23017 7 segs
+				mcpCfg.pi2c = &I2CModule;
+				Initialisation avec I2C_1
+				Adresse = MCP23017_7_SEG_ADRESS;
 		
-		Res = mcp23017_init(@mpc23017_7_seg, @mcpCfg)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+				Res = mcp23017_init(@mpc23017_7_seg, @mcpCfg)
+				SI Res != MCP23017_OK ALORS
+					error_handler()
+				FIN SI
+			
+				// MPC23017 BP
+				mcpCfg.pi2c = &I2CModule;
+				Initialisation avec I2C_1
+				Adresse = MCP23017_BP_ADDRESS;
 		
-		// MPC23017 BP
-		mcpCfg.pi2c = &I2CModule;
-		Initialisation avec I2C_1
-		Adresse = MCP23017_BP_ADDRESS;
+				Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+				SI Res != MCP23017_OK ALORS
+					error_handler()
+				FIN SI
 		
-		Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+				// MPC23017 GENERAL
+				mcpCfg.pi2c = &I2CModule;
+				Initialisation avec I2C_1
+				Adresse = MCP23017_GENERAL_ADDRESS;
 		
-		// MPC23017 GENERAL
-		mcpCfg.pi2c = &I2CModule;
-		Initialisation avec I2C_1
-		Adresse = MCP23017_GENERAL_ADDRESS;
+				Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+				SI Res != MCP23017_OK ALORS
+					error_handler()
+				FIN SI
 		
-		Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+			FIN Initialiser()
 		
-		FIN Initialiser()
+			PROCEDURE MainTask()
+			VARIABLES
+				uint8_t working_mode
+				uint8_t next_step
+				led_color_t rw_pointer_color
+			DEBUT
+				Res = mcp23017_read_reg(@mcp23017_bp, MCP23017_IOA_ADDRESS, @working_mode)
+				SI Res != MCP23017_OK ALORS
+					working_mode = MANUAL_MODE
+				FIN SI
 		
-		PROCEDURE MainTask()
-		VARIABLES
-		uint8_t working_mode
-		uint8_t next_step
-		led_color_t rw_pointer_color
-		DEBUT
-		Res = mcp23017_read_reg(@mcp23017_bp, MCP23017_IOA_ADDRESS, @working_mode)
-		SI Res != MCP23017_OK ALORS
-		working_mode = MANUAL_MODE
-		FIN SI
+				TANT QUE mtu->state != ACCEPT_STATE FAIRE
+					get_next_state(mtu->state, mtu->symbol, mtu->next_state)
+					get_next_symbol(mtu->state, mtu->symbol, mtu->next_symbol)
+					get_next_move(mtu->state, mtu->symbol, mtu->next_move)
+					set_next_move(mtu->position, mtu->next_move)
 		
-		TANT QUE mtu->state != ACCEPT_STATE FAIRE
-		get_next_state(mtu->state, mtu->symbol, mtu->next_state)
-		get_next_symbol(mtu->state, mtu->symbol, mtu->next_symbol)
-		get_next_move(mtu->state, mtu->symbol, mtu->next_move)
-		set_next_move(mtu->position, mtu->next_move)
+					sk9822_set_LED_rgb(sk9822_1, mtu->position, mtu->symbol)
+					sk9822_set_LED_rgb(sk9822_1, mtu->position, rw_pointer_color)
 		
-		sk9822_set_LED_rgb(sk9822_1, mtu->position, mtu->symbol)
-		sk9822_set_LED_rgb(sk9822_1, mtu->position, rw_pointer_color)
+					RegValue = int_to_bin(mtu->state)
+					Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOA_ADDRESS, RegValue)
+					SI Res != MCP23017_OK ALORS
+						error_handler()
+					FIN SI
 		
-		RegValue = int_to_bin(mtu->state)
-		Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOA_ADDRESS, RegValue)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+					RegValue = int_to_bin(mtu->next_state)
+					Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOB_ADDRESS, RegValue)
+					SI Res != MCP23017_OK ALORS
+						error_handler()
+					FIN SI
 		
-		RegValue = int_to_bin(mtu->next_state)
-		Res = mcp23017_write_reg(@mcp23017_7_seg, MCP23017_IOB_ADDRESS, RegValue)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+					RegValue = generate_general_reg(mtu->symbol, mtu->next_symbol, mtu->next_move)
+					Res = mcp23017_write_reg(@mcp23017_general, MCP23017_IOA_ADDRESS, RegValue)
+					SI Res != MCP23017_OK ALORS
+						error_handler()
+					FIN SI
 		
-		RegValue = generate_general_reg(mtu->symbol, mtu->next_symbol, mtu->next_move)
-		Res = mcp23017_write_reg(@mcp23017_general, MCP23017_IOA_ADDRESS, RegValue)
-		SI Res != MCP23017_OK ALORS
-		error_handler()
-		FIN SI
+					mtu->state = mtu->next_state
+					mtu->symbol = mtu->next_symbol
 		
-		mtu->state = mtu->next_state
-		mtu->symbol = mtu->next_symbol
-		
-		SI working_mode = MANUAL_MODE ALORS
-		TANT QUE next_step = 0 FAIRE
-		FIN TANT QUE
-		SINON
-		attendre(2000)
-		FIN SI
+					SI working_mode = MANUAL_MODE ALORS
+						TANT QUE next_step = 0 FAIRE
+						FIN TANT QUE
+					SINON
+						attendre(2000)
+					FIN SI
+				FIN TANT QUE
 		FIN MainTask()
 		
 		PROCEDURE error_handler()
-		allumer_led()
-		TANT QUE 1 FAIRE
+			allumer_led()
+			TANT QUE 1 FAIRE
 		FIN TANT QUE
 		FIN error_handler
 	\end{lstlisting}
 	\chapter{Annexes}
+	\section{code}
 	\section{Sources}
 \end{document}
